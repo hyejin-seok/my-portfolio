@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
     <header className="fixed w-full h-16 shadow-custom bg-yellow-100 dark:bg-brown top-5 ">
-      <div className="flex justify-between items-center w-full h-full max-w-container mx-auto px-4">
+      <div className="flex justify-center items-center w-full h-full max-w-container mx-auto px-4">
         <NextLink href="/" className="z-10 pl-6 md:p-0">
           <Image
             src={'/images/logo.png'}
@@ -22,28 +22,20 @@ export const Header = () => {
             height="44"
           />
         </NextLink>
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden z-10 pr-6"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {' '}
-          {isMenuOpen ? <FiX size="40" /> : <FiMenu size="40" />}
-        </button>
 
         <nav
-          className={`flex justify-center items-center h-[calc(100vh-20px)] transition-all ease-in-out duration-700 bg-yellow-100 w-full dark:bg-brown  md:justify-end md:h-full md:static
-          ${isMenuOpen ? 'absolute right-0 -top-5 h-screen' : 'absolute top-[-100vh] right-0'}`}
+          className={`absolute right-0 flex justify-center items-center w-full transition-all duration-500 bg-yellow-100 dark:bg-brown md:justify-end md:h-full md:static
+          ${isMenuOpen ? '-top-5 h-screen ' : 'top-[-100vh] h-[calc(100vh-20px)]'}`}
         >
-          <ul className="flex flex-col items-center gap-14 text-xl font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
+          <ul className=" flex flex-col items-center gap-14 text-xl font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200"
+                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-120}
-                duration={650}
+                offset={-120} /* 위치 나중에 조절 */
+                duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
                 HOME
@@ -51,12 +43,12 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200"
+                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-120}
-                duration={650}
+                offset={-120} /* 위치 나중에 조절 */
+                duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
                 ABOUT
@@ -64,12 +56,12 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200"
+                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-120}
-                duration={650}
+                offset={-120} /* 위치 나중에 조절 */
+                duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
                 SKILLS
@@ -77,12 +69,12 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200"
+                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-120}
-                duration={650}
+                offset={-120} /* 위치 나중에 조절 */
+                duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
                 PROJECTS
@@ -90,12 +82,12 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 hover:ring-offset-2"
+                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-120}
-                duration={650}
+                offset={-120} /* 위치 나중에 조절 */
+                duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
                 CONTACT
@@ -109,6 +101,15 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
+
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden z-10 pr-6"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        >
+          {' '}
+          {isMenuOpen ? <FiX size="40" /> : <FiMenu size="40" />}
+        </button>
       </div>
     </header>
   )

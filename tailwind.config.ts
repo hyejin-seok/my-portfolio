@@ -18,7 +18,8 @@ const config: Config = {
         yellow: {
           50: '#F8F8F8',
           100: '#D7A57F', // nav (light)
-          200: '#F6C792' // hero img bg
+          200: '#F6C792', // hero img bg
+          300: '#EE942F'
         }
       },
       maxWidth: {

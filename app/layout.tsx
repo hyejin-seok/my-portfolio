@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import { AppMetadata } from './AppMetaData'
+import './styles/globals.css'
 import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from './theme-provider'
 
@@ -9,10 +9,7 @@ const montserrat = Montserrat({
   variable: '--font-monst'
 })
 
-export const metadata: Metadata = {
-  title: 'Hyejin Seok | Portfolio',
-  description: 'Hyejin Seok | Portfolio Webstie'
-}
+export const metadata = { ...AppMetadata }
 
 export default function RootLayout({
   children
