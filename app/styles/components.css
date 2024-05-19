@@ -1,0 +1,26 @@
+/* .title-style-dark {
+  color: #d2b48c;
+  text-shadow: 
+        0px 0px 5px #a98667, 
+        0px 0px 5px #a98667, 
+        0px 0px 5px #a98667, 
+        0px 0px 10px #a98667; 
+} */
+
+.title-style-dark {
+  color: #d2b48c;
+  text-shadow:
+    0px 0px 5px #8b7355,
+    0px 0px 5px #8b7355,
+    0px 0px 5px #8b7355,
+    0px 0px 10px #8b7355;
+}
+
+.title-style-light {
+  color: #7f5539;
+  text-shadow:
+    0px 0px 5px #deab90,
+    0px 0px 5px #deab90,
+    0px 0px 5px #deab90,
+    0px 0px 10px #deab90;
+}

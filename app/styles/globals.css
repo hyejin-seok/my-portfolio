@@ -2,64 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.shadow-custom {
+@import 'hero-section.css';
+@import 'components.css';
+
+.header-shadow-custom {
   box-shadow: 0 2px 4px rgba(174, 140, 99, 0.5);
-}
-
-.hero-img {
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
-.hero-img-dark {
-  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
-  box-shadow:
-    rgba(255, 255, 255, 0.25) 0px 50px 100px -20px,
-    rgba(255, 255, 255, 0.3) 0px 30px 60px -30px,
-    rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset;
-}
-
-.hero-img-light {
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-.my-name {
-  text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #8338ec 0%,
-    #ff006e 29%,
-    #fb5607 67%,
-    #ffbe0b 100%
-  );
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 5s linear infinite;
-  display: block;
-}
-
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
 }

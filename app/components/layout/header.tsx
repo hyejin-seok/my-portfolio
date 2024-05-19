@@ -11,8 +11,8 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed w-full h-16 shadow-custom bg-yellow-100 dark:bg-brown top-5 ">
-      <div className="flex justify-center items-center w-full h-full max-w-container mx-auto px-4">
+    <header className="fixed w-full h-16 z-10 header-shadow-custom bg-yellow-100 dark:bg-brown top-5 ">
+      <div className="flex justify-between items-center w-full h-full max-w-container mx-auto px-4">
         <NextLink href="/" className="z-10 pl-6 md:p-0">
           <Image
             src={'/images/logo.png'}
@@ -27,7 +27,7 @@ export const Header = () => {
           className={`absolute right-0 flex justify-center items-center w-full transition-all duration-500 bg-yellow-100 dark:bg-brown md:justify-end md:h-full md:static
           ${isMenuOpen ? '-top-5 h-screen ' : 'top-[-100vh] h-[calc(100vh-20px)]'}`}
         >
-          <ul className=" flex flex-col items-center gap-14 text-xl font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
+          <ul className=" flex flex-col items-center gap-14 text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
             <li>
               <Link
                 className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
@@ -104,7 +104,7 @@ export const Header = () => {
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden z-10 pr-6"
+          className="z-50 md:hidden pr-6"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {' '}

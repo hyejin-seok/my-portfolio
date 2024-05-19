@@ -24,6 +24,9 @@ const config: Config = {
       },
       maxWidth: {
         container: '80rem'
+      },
+      screens: {
+        xs: '420px'
       }
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
