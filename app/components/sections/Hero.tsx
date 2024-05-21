@@ -10,35 +10,35 @@ export const Hero = () => {
   const { theme } = useTheme()
 
   return (
-    <section className="pt-12 md:pt-20" id="home">
+    <section className="max-w-container mx-auto px-4 py-16 md:py-20" id="home">
       <div className=" flex-col lg:flex-row flex items-center justify-around gap-8 lg:h-[600px] ">
         <div className="order-last lg:order-first mt-5 md:mt-0 ">
-          <h2 className="w-fit text-xl md:text-2xl text-center font-bold dark:font-semibold tracking-wide px-4 py-2 mb-8 rounded-xl bg-yellow-100 dark:bg-brown">
+          <h2 className="w-fit text-xl md:text-2xl text-center font-bold dark:font-semibold tracking-wide px-4 py-2 mb-8 rounded-xl bg-yellow-200 dark:bg-brown">
             Welcome To My Portfolio!
           </h2>
           <span className="block text-xl md:text-2xl font-bold dark:font-semibold tracking-wide">
             Hi, I&apos;m
           </span>
-          <h1 className="my-name text-3xl sm:text-4xl md:text-5xl font-bold dark:font-semibold tracking-wide py-1">
+          <h1 className="my-name text-4xl sm:text-5xl md:text-5xl font-bold dark:font-semibold tracking-wide py-1">
             Hyejin Seok
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl mt-6 text-yellow-300 font-bold dark:font-semibold">
+          <p className="text-xl sm:text-2xl md:text-3xl mt-6 text-yellow-400 font-bold dark:font-semibold">
             A Dedicated Full-Stack Web Developer
           </p>
 
           <ChangeDescriptions />
 
-          <div className="cursor-pointer w-fit px-3 py-2 mt-8 lg:mt-14 border-2 border-yellow-200 text-center rounded-lg sm:text-lg md:text-xl font-bold dark:font-semibold tracking-wide">
+          <div className="cursor-pointer w-fit px-3 py-2 mt-8 lg:mt-14 border-4 border-double border-yellow-400 text-center rounded-lg text-lg sm:text-xl md:text-2xl font-bold dark:font-semibold tracking-wide transition-all duration-300 hover:scale-105 hover:text-orange-600 hover:border-orange-600">
             <Link
               // className="inline-block"
               to="contact"
               spy={true}
               smooth={true}
-              offset={-120}
+              offset={-85}
               duration={700}
             >
               Contact me
-              <FiArrowRightCircle className="inline-block pl-2 w-8 h-8 md:w-9 md:h-9" />
+              <FiArrowRightCircle className="inline-block pl-2 w-8 h-8 md:w-9 md:h-9 " />
             </Link>
           </div>
         </div>
@@ -49,7 +49,7 @@ export const Hero = () => {
             width="500"
             height="500"
             priority
-            className={`hero-img ${theme === 'dark' ? 'hero-img-dark' : 'hero-img-light'}  w-[80%] lg:w-[100%] h-auto rounded-full p-3`}
+            className="hero-img shadow-hero-img-light dark:shadow-hero-img-dark w-[80%] lg:w-[100%] h-auto rounded-full p-3"
           />
         </div>
       </div>

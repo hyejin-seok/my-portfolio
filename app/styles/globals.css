@@ -8,3 +8,20 @@
 .header-shadow-custom {
   box-shadow: 0 2px 4px rgba(174, 140, 99, 0.5);
 }
+
+header::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1.25rem;
+  bottom: 100%;
+  background: transparent;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+}
+
+/* #about { */
+/* background-color: #332222; */
+/* background-color: #392617; */
+/* background-color: #342215; */
+/* } */

@@ -11,31 +11,31 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed w-full h-16 z-10 header-shadow-custom bg-yellow-100 dark:bg-brown top-5 ">
+    <header className="fixed w-full h-16 z-10 header-shadow-custom bg-yellow-200 dark:bg-brown top-5">
       <div className="flex justify-between items-center w-full h-full max-w-container mx-auto px-4">
-        <NextLink href="/" className="z-10 pl-6 md:p-0">
+        <NextLink href="/" className="z-10 p-6 md:p-0 lg:p-6 xl:p-11">
           <Image
             src={'/images/logo.png'}
             alt="logo-HJ"
             priority={true}
-            width="44"
-            height="44"
+            width="48"
+            height="48"
             // className="transition-all duration-300 transform hover:scale-110"
           />
         </NextLink>
 
         <nav
-          className={`absolute right-0 flex justify-center items-center w-full transition-all duration-500 bg-yellow-100 dark:bg-brown md:justify-end md:h-full md:static
+          className={`absolute right-0 flex justify-center items-center w-full transition-all duration-500 bg-yellow-200 dark:bg-brown md:justify-end md:h-full md:static
           ${isMenuOpen ? '-top-5 h-screen ' : 'top-[-100vh] h-[calc(100vh-20px)]'}`}
         >
           <ul className=" flex flex-col items-center gap-14 text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300  border-transparent transition-all duration-300 transform hover:scale-110"
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={-120} /* 위치 나중에 조절 */
+                offset={-85} /* 위치 나중에 조절 */
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -44,11 +44,11 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={-120} /* 위치 나중에 조절 */
+                offset={-85} /* 위치 나중에 조절 */
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -57,11 +57,11 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
                 to="skills"
                 spy={true}
                 smooth={true}
-                offset={-120} /* 위치 나중에 조절 */
+                offset={-85} /* 위치 나중에 조절 */
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -70,11 +70,11 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
                 to="projects"
                 spy={true}
                 smooth={true}
-                offset={-120} /* 위치 나중에 조절 */
+                offset={-85} /* 위치 나중에 조절 */
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -83,11 +83,11 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
                 to="contact"
                 spy={true}
                 smooth={true}
-                offset={-120} /* 위치 나중에 조절 */
+                offset={-85} /* 위치 나중에 조절 */
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
