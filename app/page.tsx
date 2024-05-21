@@ -1,5 +1,5 @@
 import { Header } from './components/layout'
-import { Hero, AboutMe } from './components/sections'
+import { Hero, About, Skills, Projects, Contact } from './components/sections'
 
 export default function Home() {
   return (
@@ -7,7 +7,10 @@ export default function Home() {
       <Header />
       <main className="pt-20 px-4 max-w-container mx-auto">
         <Hero />
-        <AboutMe />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
     </div>
   )

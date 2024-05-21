@@ -28,7 +28,7 @@ export const Hero = () => {
 
           <ChangeDescriptions />
 
-          <div className="w-fit px-3 py-2 mt-8 lg:mt-14 border-2 border-yellow-200 text-center rounded-lg sm:text-lg md:text-xl font-bold dark:font-semibold tracking-wide">
+          <div className="cursor-pointer w-fit px-3 py-2 mt-8 lg:mt-14 border-2 border-yellow-200 text-center rounded-lg sm:text-lg md:text-xl font-bold dark:font-semibold tracking-wide">
             <Link
               // className="inline-block"
               to="contact"
@@ -38,10 +38,7 @@ export const Hero = () => {
               duration={700}
             >
               Contact me
-              <FiArrowRightCircle
-                size="32"
-                className="inline-block pl-2 md:md stroke-[2.5px]"
-              />
+              <FiArrowRightCircle className="inline-block pl-2 w-8 h-8 md:w-9 md:h-9" />
             </Link>
           </div>
         </div>

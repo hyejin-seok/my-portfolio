@@ -22,8 +22,12 @@ export const SoundSwitch = () => {
   }
 
   return (
-    <button onClick={toggleSound} className="text-3xl hover:text-orange-200">
+    <button
+      onClick={toggleSound}
+      className="text-3xl relative transition-transform transform duration-300 hover:scale-110 hover:text-yellow-200"
+    >
       {isPlaying ? <FiVolumeX /> : <FiVolume2 />}
+      <span className="absolute inset-0 -m-1 border-2 border-transparent rounded-full transition-all duration-500 hover:border-yellow-200"></span>
     </button>
   )
 }

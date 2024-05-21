@@ -20,6 +20,7 @@ export const Header = () => {
             priority={true}
             width="44"
             height="44"
+            // className="transition-all duration-300 transform hover:scale-110"
           />
         </NextLink>
 
@@ -30,7 +31,7 @@ export const Header = () => {
           <ul className=" flex flex-col items-center gap-14 text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
+                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
                 to="home"
                 spy={true}
                 smooth={true}
@@ -43,8 +44,8 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
-                to="home"
+                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                to="about"
                 spy={true}
                 smooth={true}
                 offset={-120} /* 위치 나중에 조절 */
@@ -56,8 +57,8 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
-                to="home"
+                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                to="skills"
                 spy={true}
                 smooth={true}
                 offset={-120} /* 위치 나중에 조절 */
@@ -69,8 +70,8 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
-                to="home"
+                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                to="projects"
                 spy={true}
                 smooth={true}
                 offset={-120} /* 위치 나중에 조절 */
@@ -82,8 +83,8 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300"
-                to="home"
+                className="inline-block cursor-pointer hover:text-orange-200 hover:border-b-2 hover:border-orange-200 border-transparent transition-all duration-300 transform hover:scale-110"
+                to="contact"
                 spy={true}
                 smooth={true}
                 offset={-120} /* 위치 나중에 조절 */

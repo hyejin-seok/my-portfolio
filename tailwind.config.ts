@@ -20,7 +20,8 @@ const config: Config = {
           100: '#D7A57F', // nav (light)
           200: '#F6C792', // hero img bg
           300: '#EE942F'
-        }
+        },
+        grey: '#D9D9D9'
       },
       maxWidth: {
         container: '80rem'
