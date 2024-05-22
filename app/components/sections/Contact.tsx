@@ -28,8 +28,8 @@ export const Contact = () => {
       id="contact"
       className="max-w-container mx-auto px-4 pt-16 pb-32 md:pt-20"
     >
-      <SectionTitle title="GET IN TOUCH" />
-      <div className="flex flex-col gap-4 items-center justify-center mt-24 lg:mt-32 pb-40 md:px-4 font-semibold dark:font-normal">
+      <SectionTitle title="Get In Touch" />
+      <div className="flex flex-col gap-4 items-center justify-center mt-12 lg:mt-20 md:px-4 font-semibold dark:font-normal">
         <div className="mb-12">
           <div className="flex flex-col gap-4 text-xl md:text-2xl text-center px-4">
             <p>I&apos;m currently open to new opportunities.</p>
@@ -118,7 +118,7 @@ export const Contact = () => {
             </div>
             <button
               type="submit"
-              className="border-4 border-double p-2 items-center rounded-lg mx-auto my-5 border-yellow-400 dark:border-yellow-300 transition-all duration-300 hover:scale-105 hover:text-yellow-300 hover:border-yellow-300 dark:hover:border-yellow-300 hover:bg-brown"
+              className="border-4 border-double p-2 items-center rounded-lg mx-auto mt-5 border-yellow-400 dark:border-yellow-300 transition-all duration-300 hover:scale-105 hover:text-yellow-300 hover:border-yellow-300 dark:hover:border-yellow-300 hover:bg-brown"
             >
               Send Message
               <FiSend className="inline-block pl-1 w-5 h-5 md:w-6 md:h-6" />

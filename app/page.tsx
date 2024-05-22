@@ -1,5 +1,6 @@
-import { Header } from './components/layout'
+import { Footer, Header } from './components/layout'
 import { Hero, About, Skills, Projects, Contact } from './components/sections'
+import { ScrollToTop } from './components/buttons'
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
         <div className="h-2 bg-gradient-light dark:bg-gradient-dark"></div>
         <Contact />
       </main>
+      <Footer />
+      <ScrollToTop />
     </div>
   )
 }

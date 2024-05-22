@@ -28,7 +28,9 @@ export const Header = () => {
           className={`absolute right-0 flex justify-center items-center w-full transition-all duration-500 bg-yellow-200 dark:bg-brown md:justify-end md:h-full md:static
           ${isMenuOpen ? '-top-5 h-screen ' : 'top-[-100vh] h-[calc(100vh-20px)]'}`}
         >
-          <ul className=" flex flex-col items-center gap-14 text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-lg">
+          <ul
+            className={`flex flex-col items-center justify-start gap-12  text-2xl md:text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 ${isMenuOpen ? 'h-full mt-64' : 'h-auto mt-0'}`}
+          >
             <li>
               <Link
                 className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300  border-transparent transition-all duration-300 transform hover:scale-110"
@@ -39,7 +41,7 @@ export const Header = () => {
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
-                HOME
+                Home
               </Link>
             </li>
             <li>
@@ -52,7 +54,7 @@ export const Header = () => {
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
-                ABOUT
+                About
               </Link>
             </li>
             <li>
@@ -65,7 +67,7 @@ export const Header = () => {
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
-                SKILLS
+                Skills
               </Link>
             </li>
             <li>
@@ -78,7 +80,7 @@ export const Header = () => {
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
-                PROJECTS
+                Projects
               </Link>
             </li>
             <li>
@@ -91,7 +93,7 @@ export const Header = () => {
                 duration={700}
                 onClick={() => setIsMenuOpen(false)}
               >
-                CONTACT
+                Contact
               </Link>
             </li>
             <li className="flex">
@@ -105,7 +107,7 @@ export const Header = () => {
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="z-50 md:hidden pr-6"
+          className="z-50 md:hidden pr-6 hover:text-red-500"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {' '}
