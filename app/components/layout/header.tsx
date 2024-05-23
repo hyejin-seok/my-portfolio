@@ -11,7 +11,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed w-full h-16 z-10 header-shadow-custom bg-yellow-200 dark:bg-brown top-5">
+    <header className="fixed w-full h-16 z-10 shadow-header bg-yellow-200 dark:bg-brown top-5">
       <div className="flex justify-between items-center w-full h-full max-w-container mx-auto px-4">
         <NextLink href="/" className="z-10 p-6 md:p-0 lg:p-6 xl:p-11">
           <Image
@@ -107,7 +107,7 @@ export const Header = () => {
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="z-50 md:hidden pr-6 hover:text-red-500"
+          className="z-50 md:hidden pr-6  hover:text-yellow-300 transition-all duration-300 hover:scale-110"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {' '}

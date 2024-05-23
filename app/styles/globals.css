@@ -5,10 +5,6 @@
 @import 'hero-section.css';
 @import 'components.css';
 
-.header-shadow-custom {
-  box-shadow: 0 2px 4px rgba(174, 140, 99, 0.5);
-}
-
 header::before {
   position: absolute;
   content: '';
@@ -19,9 +15,3 @@ header::before {
   z-index: -1;
   backdrop-filter: blur(10px);
 }
-
-/* #about { */
-/* background-color: #332222; */
-/* background-color: #392617; */
-/* background-color: #342215; */
-/* } */

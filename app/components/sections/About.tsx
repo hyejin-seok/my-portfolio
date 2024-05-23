@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="pt-16 pb-32 md:pt-20 md:pb-40 px-4 bg-yellow-100 dark:bg-cocoa"
+      className="pt-12 pb-28 md:pt-20 md:pb-40 px-4 bg-yellow-100 dark:bg-cocoa"
     >
       <div className="max-w-container mx-auto">
         <SectionTitle title="About Hyejin" />
