@@ -1,1 +1,1 @@
-export { SectionTitle } from './section-title'
+export { SectionTitle } from './SectionTitle'

@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { SectionTitle } from '../titles'
+import { SectionTitle } from '../Titles'
 
 export const About = () => {
   return (
@@ -20,7 +20,7 @@ export const About = () => {
               className="mx-auto h-auto rounded-xl ring-4 ring-yellow-200"
             />
           </div>
-          <div className="flex flex-col gap-5 text-lg md:text-xl w-[95%] xs:w-[80%] lg:w-[50%] font-medium dark:font-normal rounded-lg">
+          <div className="flex flex-col gap-5 text-lg md:text-xl w-[95%] xs:w-[80%] lg:w-[45%] font-medium dark:font-normal rounded-lg">
             <p>
               I am a full stack web developer with experience in both design and
               coding for the front end and back end. I have a passion for

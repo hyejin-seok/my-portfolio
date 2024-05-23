@@ -4,7 +4,7 @@ import { Link } from 'react-scroll'
 import Image from 'next/image'
 import { FiArrowRightCircle } from 'react-icons/fi'
 import { useTheme } from 'next-themes'
-import { ChangeDescriptions } from '../animations'
+import { ChangeDescriptions } from '../Animations'
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
 
 export const Hero = () => {
@@ -29,7 +29,7 @@ export const Hero = () => {
 
           <ChangeDescriptions />
 
-          <div className="cursor-pointer w-fit px-3 py-2 mt-8 lg:mt-14 border-4 border-double border-yellow-400 dark:border-yellow-300 text-center rounded-lg text-lg sm:text-xl md:text-2xl font-bold dark:font-semibold tracking-wide transition-all duration-300 hover:scale-105 hover:bg-yellow-100 dark:hover:bg-yellow-200">
+          <div className="cursor-pointer w-fit px-3 py-2 mt-8 lg:mt-14 border-4 border-double border-yellow-400 dark:border-yellow-300 text-center rounded-lg text-lg sm:text-xl md:text-2xl font-semibold tracking-wide transition-all duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-white dark:hover:text-black dark:hover:bg-yellow-100">
             <Link
               // className="inline-block"
               to="contact"
@@ -54,7 +54,8 @@ export const Hero = () => {
           />
         </div>
       </div>
-      <div className="w-fit mx-auto mt-10 md:mt-0 p-1 text-base font-semibold rounded-full bg-yellow-300 dark:bg-yellow-200 shadow-scroll-to-top">
+      {/* <div className="w-fit animate-bounce mx-auto mt-10 md:mt-0 p-1 text-base font-semibold rounded-full bg-yellow-300 dark:bg-yellow-200 shadow-scroll-to-top"> */}
+      <div className="w-fit animate-bounce mx-auto mt-10 md:mt-0 text-yellow-400 dark:text-yellow-300 font-semibold  ">
         <HiOutlineChevronDoubleDown className="text-3xl" />
       </div>
     </section>

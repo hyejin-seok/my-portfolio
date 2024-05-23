@@ -1,6 +1,6 @@
 'use client'
 // import Image from 'next/image'
-import { SectionTitle } from '../titles'
+import { SectionTitle } from '../Titles'
 
 export const Projects = () => {
   return (

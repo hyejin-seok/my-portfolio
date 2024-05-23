@@ -1,6 +1,6 @@
 'use server'
 import { Resend } from 'resend'
-import { EmailTemplate } from './components/emails'
+import { EmailTemplate } from './components/Emails'
 
 interface State {
   error: string | null

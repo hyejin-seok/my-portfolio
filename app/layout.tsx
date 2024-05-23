@@ -1,7 +1,7 @@
 import { AppMetadata } from './AppMetaData'
 import './styles/globals.css'
 import { Montserrat } from 'next/font/google'
-import { ThemeProvider } from './theme-provider'
+import { ThemeProvider } from './ThemeProvider'
 import { Toaster } from 'react-hot-toast'
 
 const montserrat = Montserrat({

@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 import Image from 'next/image'
 import { Link } from 'react-scroll'
 import { useState } from 'react'
-import { SoundSwitch, ThemeSwitch } from '../switches'
+import { SoundSwitch, ThemeSwitch } from '../Switches'
 import { FiMenu, FiX } from 'react-icons/fi'
 
 export const Header = () => {

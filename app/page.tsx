@@ -1,6 +1,6 @@
-import { Footer, Header } from './components/layout'
-import { Hero, About, Skills, Projects, Contact } from './components/sections'
-import { ScrollToTop } from './components/buttons'
+import { Footer, Header } from './components/Layout'
+import { Hero, About, Skills, Projects, Contact } from './components/Sections'
+import { ScrollToTop } from './components/Buttons'
 
 export default function Home() {
   return (
