@@ -66,18 +66,17 @@ export const SkillIcons = ({ type }: SkillCategory) => {
       name: 'Vite'
     },
     {
-      icon: <SiJquery size="100%" />,
-      name: 'Jquery'
-    },
-    {
       icon: <SiReactquery size="100%" />,
       name: 'React Query'
+    },
+    {
+      icon: <SiJquery size="100%" />,
+      name: 'jQuery'
     },
     {
       icon: <SiJest size="100%" />,
       name: 'Jest'
     },
-
     {
       icon: <SiHtml5 size="100%" />,
       name: 'HTML5'
@@ -111,7 +110,7 @@ export const SkillIcons = ({ type }: SkillCategory) => {
     },
     {
       icon: <SiNestjs size="100%" />,
-      name: 'Nest.js'
+      name: 'NestJS'
     },
     {
       icon: <SiMongodb size="100%" />,

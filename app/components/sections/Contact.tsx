@@ -26,11 +26,11 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="max-w-container mx-auto px-4 pt-12 pb-28 md:pt-20"
+      className="max-w-container mx-auto px-4 pt-12 pb-28 md:pt-18"
     >
       <SectionTitle title="Get In Touch" />
       <div className="flex flex-col gap-4 items-center justify-center mt-10 lg:mt-14 md:px-4 font-semibold dark:font-normal">
-        <div className="mb-12">
+        <div className="mb-7">
           <div className="flex flex-col gap-4 text-xl md:text-2xl text-center px-4">
             <p>I&apos;m currently open to new opportunities.</p>
             <p>
@@ -39,7 +39,7 @@ export const Contact = () => {
               I&apos;ll get back to you as soon as possible!
             </p>
           </div>
-          <div className="flex gap-10 mt-8 text-5xl justify-center">
+          <div className="flex gap-10 mt-6 text-4xl sm:text-5xl justify-center">
             <a
               href={'https://www.linkedin.com/in/hyejinseok/'}
               target="_blank"
@@ -63,13 +63,13 @@ export const Contact = () => {
           </div>
         </div>
 
-        <div className="w-[95%] sm:w-[90%] lg:w-[85%] px-3 py-4 sm:p-4 xl:p-8 border-4 border-double rounded-lg border-yellow-400 dark:border-yellow-300">
+        <div className="w-[95%] sm:w-[92%] md:w-[90%] lg:w-[85%] px-3 py-4 sm:p-4 md:p-6 lg:p-8 border-4 border-double rounded-lg border-yellow-400 dark:border-yellow-300">
           <form
             className="flex flex-col gap-4 text-sm xs:text-base md:text-lg"
             action={sendEmailAction}
           >
             <div className="flex flex-col md:flex-row justify-between">
-              <div className="flex flex-col md:w-[44%]">
+              <div className="flex flex-col mb-4 md:w-[44%] md:mb-0">
                 <label htmlFor="name" className="mb-2">
                   Name:
                 </label>

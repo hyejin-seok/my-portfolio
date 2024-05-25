@@ -12,12 +12,6 @@ const config: Config = {
       fontFamily: {
         monst: ['var(--font-monst)', 'sans-serif']
       },
-      maxWidth: {
-        container: '80rem'
-      },
-      screens: {
-        xs: '420px'
-      },
       backgroundImage: (theme) => ({
         'gradient-light': 'linear-gradient(to left, #F1F1EF, #ecd5c3)',
         'gradient-dark': 'linear-gradient(to left, #271A10, #332222)'
@@ -44,21 +38,32 @@ const config: Config = {
           'rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset',
         'scroll-to-top':
           '0px 0px 5px #8b7355, 0px 0px 5px #8b7355, 0px 0px 5px #8b7355, 0px 0px 10px #8b7355'
+      },
+      maxWidth: {
+        container: '80rem'
+      },
+      screens: {
+        xs: '420px'
+      },
+      animation: {
+        floating: 'floating 3s ease-in-out infinite',
+        'bounce-slow': 'bounce 3s linear infinite'
+      },
+      keyframes: {
+        floating: {
+          '0%': { transform: 'translate(0, 0px)' },
+          '50%': { transform: 'translate(0, 10px)' },
+          '100%': { transform: 'translate(0, -0px)' }
+        }
       }
-
-      // backgroundImage: {
-      //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      //   "gradient-conic":
-      //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      // },
-    }
-  },
-  variants: {
-    extend: {
-      backgroundImage: ['dark'],
-      boxShadow: ['dark']
-    }
-  },
-  plugins: []
+    },
+    variants: {
+      extend: {
+        backgroundImage: ['dark'],
+        boxShadow: ['dark']
+      }
+    },
+    plugins: []
+  }
 }
 export default config

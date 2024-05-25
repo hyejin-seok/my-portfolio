@@ -11,8 +11,11 @@ export const Hero = () => {
   const { theme } = useTheme()
 
   return (
-    <section className="max-w-container mx-auto px-4 py-16 md:py-20" id="home">
-      <div className=" flex-col lg:flex-row flex items-center justify-around gap-8 lg:h-[600px] ">
+    <section
+      className="max-w-container mx-auto px-4 pt-4 pb-16 md:py-20"
+      id="home"
+    >
+      <div className=" flex-col lg:flex-row flex items-center justify-around gap-5 md:gap-8 lg:h-[600px] ">
         <div className="order-last lg:order-first mt-5 md:mt-0 ">
           <h2 className="w-fit text-xl md:text-2xl text-center font-bold dark:font-semibold tracking-wide px-4 py-2 mb-8 rounded-xl bg-yellow-200 dark:bg-brown">
             Welcome To My Portfolio!
@@ -20,7 +23,7 @@ export const Hero = () => {
           <span className="block text-xl md:text-2xl font-bold dark:font-semibold tracking-wide">
             Hi, I&apos;m
           </span>
-          <h1 className="my-name text-4xl sm:text-5xl md:text-5xl font-bold dark:font-semibold tracking-wide py-1">
+          <h1 className="my-name text-4xl md:text-6xl font-bold dark:font-semibold tracking-wide py-1">
             Hyejin Seok
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl mt-6 text-yellow-400 font-bold dark:font-semibold">
@@ -50,14 +53,18 @@ export const Hero = () => {
             width="500"
             height="500"
             priority
-            className="hero-img shadow-hero-img-light dark:shadow-hero-img-dark w-[80%] lg:w-[100%] h-auto rounded-full p-3"
+            className="w-[80%] lg:w-[100%] h-auto rounded-full p-3 animate-floating shadow-hero-img-light dark:shadow-hero-img-dark"
           />
         </div>
       </div>
-      {/* <div className="w-fit animate-bounce mx-auto mt-10 md:mt-0 p-1 text-base font-semibold rounded-full bg-yellow-300 dark:bg-yellow-200 shadow-scroll-to-top"> */}
-      <div className="w-fit animate-bounce mx-auto mt-10 md:mt-0 text-yellow-400 dark:text-yellow-300 font-semibold  ">
-        <HiOutlineChevronDoubleDown className="text-3xl" />
-      </div>
+      <button
+        className="flex w-fit animate-bounce mx-auto mt-10 md:mt-0 text-yellow-400 dark:text-yellow-300 font-semibold"
+        aria-label="Scroll to About section"
+      >
+        <Link to="about" spy={true} smooth={true} offset={-85} duration={700}>
+          <HiOutlineChevronDoubleDown className="text-3xl sm:text-4xl  transition-all duration-500 hover:scale-110" />
+        </Link>
+      </button>
     </section>
   )
 }
