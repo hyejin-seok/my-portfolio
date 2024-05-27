@@ -10,15 +10,15 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="max-w-container mx-auto px-4 pt-12 pb-28 md:pt-18 md:pb-40"
+      className="md:pt-18 mx-auto max-w-container px-4 pb-28 pt-12 md:pb-40"
     >
       <SectionTitle title="Technical Skills" />
       {category.map((type) => (
         <div
           key={type}
-          className="mt-10 md:mt-14 flex flex-col justify-center items-center"
+          className="mt-10 flex flex-col items-center justify-center md:mt-14"
         >
-          <h3 className="font-semibold text-2xl text-center">{type}</h3>
+          <h3 className="text-center text-2xl font-semibold">{type}</h3>
           <SkillIcons type={type} />
         </div>
       ))}

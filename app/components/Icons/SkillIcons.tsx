@@ -187,16 +187,16 @@ export const SkillIcons = ({ type }: SkillCategory) => {
   }
 
   return (
-    <ul className="flex gap-6 sm:gap-8 mt-5 flex-wrap justify-center w-[90%] md:w-[80%] lg:w-[70%]">
+    <ul className="mt-5 flex w-[90%] flex-wrap justify-center gap-6 sm:gap-8 md:w-[80%] lg:w-[70%]">
       {getSkillsByCategory(type).map((skill) => (
         <li
           key={skill.name}
-          className="relative flex group w-14 h-14 p-2 rounded-xl bg-yellow-200 text-sm sm:text-base text-white dark:bg-yellow-100 dark:text-black transition-all duration-500 hover:scale-110 hover:bg-brown dark:hover:bg-yellow-400"
+          className="group relative flex h-14 w-14 rounded-xl bg-yellow-200 p-2 text-sm text-white transition-all duration-500 hover:scale-110 hover:bg-brown dark:bg-yellow-100 dark:text-black dark:hover:bg-yellow-400 sm:text-base"
         >
           {skill.icon}
           <span
-            className="opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 text-black  dark:text-white absolute left-1/2
-    -translate-x-1/2 translate-y-full mt-6 sm:mt-5 mx-auto px-2 w-max"
+            className="absolute left-1/2 mx-auto mt-6 w-max -translate-x-1/2  translate-y-full px-2 text-black
+    opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100 dark:text-white sm:mt-5"
           >
             {skill.name}
           </span>

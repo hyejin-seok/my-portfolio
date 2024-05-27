@@ -1,39 +1,56 @@
 import Image from 'next/image'
 import { ProjectType } from '@/app/data'
 import { SiGithub } from 'react-icons/si'
+import { FiExternalLink, FiInfo } from 'react-icons/fi'
+import { useState } from 'react'
+import { ProjectModal } from '../Modals'
 
 type ProjectCardProps = {
   project: ProjectType
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const [showModal, setShowModal] = useState(false)
+
   const reverseLayout = project.id % 2 === 0
 
   return (
-    <article>
-      <div className={`flex ${reverseLayout ? 'flex-row-reverse' : ''} `}>
-        <figure className="w-1/2">
-          {' '}
+    <article className="font-medium dark:font-normal">
+      <div
+        role="button"
+        tabIndex={project.id}
+        className={`flex flex-col items-center xl:flex-row ${reverseLayout && 'xl:flex-row-reverse'}`}
+      >
+        <figure
+          onClick={() => setShowModal(true)}
+          className="group relative w-full cursor-pointer overflow-hidden sm:w-[90%] md:w-[70%] lg:w-1/2"
+        >
           <Image
             // src={`/images/projects/${project.images[0]}`}
             src={'/images/test2.png'}
-            alt={`Image of ${project.title} project`}
+            alt={`Screenshot of the ${project.title} project`}
             width={1200}
             height={800}
-            className={`h-full w-full border-8 border-yellow-300 ${reverseLayout ? 'rounded-r-lg' : 'rounded-l-lg'} `}
+            className="h-full w-full rounded-lg border-[7px] border-yellow-200 "
           />
+
+          <div
+            className={`absolute inset-0 flex translate-y-full transform flex-col items-center justify-center rounded-lg bg-black bg-opacity-80 text-xl font-medium text-white opacity-0 group-hover:translate-y-0 xl:-translate-y-0 ${reverseLayout ? 'xl:-translate-x-full xl:group-hover:translate-x-0' : 'xl:translate-x-full xl:group-hover:translate-x-0'}   pointer-events-none transition-transform duration-700 group-hover:opacity-100`}
+          >
+            <FiInfo className="pb-2 text-4xl" />
+            <p>More Details</p>
+          </div>
         </figure>
-        <div
-          className={`w-1/2 flex flex-col gap-6 bg-black p-8 ${reverseLayout ? 'rounded-l-lg' : 'rounded-r-lg'}`}
-        >
-          <header className="flex flex-col gap-4">
-            <h3 className="text-2xl text-center font-semibold">
+
+        <div className="flex w-full flex-col gap-6 rounded-lg bg-white px-6 py-4 dark:bg-black sm:w-[90%] md:w-[70%] md:p-8 lg:w-1/2">
+          <header>
+            <h3 className="text-center text-xl font-semibold md:text-3xl">
               {project.title}
             </h3>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3 pt-3 text-sm md:gap-4 md:pt-4 md:text-base">
               {project.techStacks.map((stack) => (
                 <div
-                  className="border-2 border-yellow-300 w-fit rounded-lg p-1"
+                  className="w-fit rounded-lg border-4 border-double border-yellow-200 p-1"
                   key={stack}
                 >
                   {stack}
@@ -41,20 +58,47 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               ))}
             </div>
           </header>
-          <p className="text-lg">{project.description}</p>
-          <footer className="flex justify-center items-center gap-4">
-            <p className="text-lg">Source URL:</p>
-            <a
-              href={project.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
-            >
-              <SiGithub className="text-3xl" />
-            </a>
+          <p className="line-clamp-4 whitespace-pre-line pt-2 text-base md:pt-4 md:text-lg">
+            {project.description}
+          </p>
+          <footer className="flex items-center justify-center gap-4">
+            {project.sourceCode && (
+              <div className="flex items-center gap-2">
+                <h4 className="text-base md:text-lg">Source Code:</h4>
+                <a
+                  href={project.sourceCode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
+                >
+                  <SiGithub className="text-2xl text-yellow-200 md:text-3xl" />
+                </a>
+              </div>
+            )}
+            {project.liveDemo && (
+              <div className="flex items-center gap-2">
+                <h4 className="text-base md:text-lg">Live Demo:</h4>
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
+                >
+                  <FiExternalLink className="text-2xl text-yellow-200 md:text-3xl" />
+                </a>
+              </div>
+            )}
           </footer>
         </div>
       </div>
+
+      {showModal && (
+        <ProjectModal
+          project={project}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      )}
     </article>
   )
 }

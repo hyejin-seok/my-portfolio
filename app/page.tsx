@@ -4,7 +4,7 @@ import { ScrollToTop } from './components/Buttons'
 
 export default function Home() {
   return (
-    <div className="font-monst text-black bg-white dark:bg-black dark:text-white min-h-screen">
+    <div className="min-h-screen bg-white font-monst text-black dark:bg-black dark:text-white">
       <Header />
       <main className="pt-[5.25rem]">
         <Hero />

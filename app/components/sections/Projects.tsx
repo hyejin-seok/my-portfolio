@@ -8,11 +8,11 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="pt-12 pb-28 md:pt-18 md:pb-40 px-4 bg-yellow-100 dark:bg-cocoa"
+      className="md:pt-18 bg-yellow-100 px-4 pb-28 pt-12 dark:bg-cocoa md:pb-40"
     >
-      <div className="max-w-container mx-auto">
+      <div className="mx-auto max-w-container">
         <SectionTitle title="Featured Projects" />
-        <div className="flex flex-col gap-20 mt-10 md:mt-14">
+        <div className="mt-10 flex flex-col flex-wrap gap-24 px-4 md:mt-20 md:flex-row">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

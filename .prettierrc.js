@@ -5,5 +5,7 @@ module.exports = {
   jsxSingleQuote: false,
   trailingComma: 'none',
   semi: false,
-  bracketSpacing: true
+  bracketSpacing: true,
+  // printWidth: 80,
+  plugins: ['prettier-plugin-tailwindcss']
 }

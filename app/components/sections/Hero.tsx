@@ -12,27 +12,27 @@ export const Hero = () => {
 
   return (
     <section
-      className="max-w-container mx-auto px-4 pt-4 pb-16 md:py-20"
+      className="mx-auto max-w-container px-4 pb-16 pt-4 md:py-20"
       id="home"
     >
-      <div className=" flex-col lg:flex-row flex items-center justify-around gap-5 md:gap-8 lg:h-[600px] ">
-        <div className="order-last lg:order-first mt-5 md:mt-0 ">
-          <h2 className="w-fit text-xl md:text-2xl text-center font-bold dark:font-semibold tracking-wide px-4 py-2 mb-8 rounded-xl bg-yellow-200 dark:bg-brown">
+      <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[600px] lg:flex-row ">
+        <div className="order-last mt-5 md:mt-0 lg:order-first ">
+          <h2 className="mb-8 w-fit rounded-xl bg-yellow-200 px-4 py-2 text-center text-xl font-bold tracking-wide dark:bg-brown dark:font-semibold md:text-2xl">
             Welcome To My Portfolio!
           </h2>
-          <span className="block text-xl md:text-2xl font-bold dark:font-semibold tracking-wide">
+          <span className="block text-xl font-bold tracking-wide dark:font-semibold md:text-2xl">
             Hi, I&apos;m
           </span>
-          <h1 className="my-name text-4xl md:text-6xl font-bold dark:font-semibold tracking-wide py-1">
+          <h1 className="my-name py-1 text-4xl font-bold tracking-wide dark:font-semibold md:text-6xl">
             Hyejin Seok
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl mt-6 text-yellow-400 font-bold dark:font-semibold">
+          <p className="mt-6 text-xl font-bold text-yellow-400 dark:font-semibold sm:text-2xl md:text-3xl">
             A Dedicated Full-Stack Web Developer
           </p>
 
           <ChangeDescriptions />
 
-          <div className="cursor-pointer w-fit px-3 py-2 mt-8 lg:mt-14 border-4 border-double border-yellow-400 dark:border-yellow-300 text-center rounded-lg text-lg sm:text-xl md:text-2xl font-semibold tracking-wide transition-all duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-white dark:hover:text-black dark:hover:bg-yellow-100">
+          <div className="mt-8 w-fit cursor-pointer rounded-lg border-4 border-double border-yellow-400 px-3 py-2 text-center text-lg font-semibold tracking-wide transition-all duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black sm:text-xl md:text-2xl lg:mt-14">
             <Link
               // className="inline-block"
               to="contact"
@@ -42,7 +42,7 @@ export const Hero = () => {
               duration={700}
             >
               Contact me
-              <FiArrowRightCircle className="inline-block pl-2 w-8 h-8 md:w-9 md:h-9 " />
+              <FiArrowRightCircle className="inline-block h-8 w-8 pl-2 md:h-9 md:w-9 " />
             </Link>
           </div>
         </div>
@@ -53,16 +53,16 @@ export const Hero = () => {
             width="500"
             height="500"
             priority
-            className="w-[80%] lg:w-[100%] h-auto rounded-full p-3 animate-floating shadow-hero-img-light dark:shadow-hero-img-dark"
+            className="h-auto w-[80%] animate-floating rounded-full p-3 shadow-hero-img-light dark:shadow-hero-img-dark lg:w-[100%]"
           />
         </div>
       </div>
       <button
-        className="flex w-fit animate-bounce mx-auto mt-10 md:mt-0 text-yellow-400 dark:text-yellow-300 font-semibold"
+        className="mx-auto mt-10 flex w-fit animate-bounce font-semibold text-yellow-400 dark:text-yellow-300 md:mt-0"
         aria-label="Scroll to About section"
       >
         <Link to="about" spy={true} smooth={true} offset={-85} duration={700}>
-          <HiOutlineChevronDoubleDown className="text-3xl sm:text-4xl  transition-all duration-500 hover:scale-110" />
+          <HiOutlineChevronDoubleDown className="text-3xl transition-all  duration-500 hover:scale-110 sm:text-4xl" />
         </Link>
       </button>
     </section>

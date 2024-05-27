@@ -26,12 +26,12 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="max-w-container mx-auto px-4 pt-12 pb-28 md:pt-18"
+      className="md:pt-18 mx-auto max-w-container px-4 pb-28 pt-12"
     >
       <SectionTitle title="Get In Touch" />
-      <div className="flex flex-col gap-4 items-center justify-center mt-10 lg:mt-14 md:px-4 font-semibold dark:font-normal">
+      <div className="mt-10 flex flex-col items-center justify-center gap-4 font-semibold dark:font-normal md:px-4 lg:mt-14">
         <div className="mb-7">
-          <div className="flex flex-col gap-4 text-xl md:text-2xl text-center px-4">
+          <div className="flex flex-col gap-4 px-4 text-center text-xl md:text-2xl">
             <p>I&apos;m currently open to new opportunities.</p>
             <p>
               Whether you have a question or just want to say hi,
@@ -39,12 +39,12 @@ export const Contact = () => {
               I&apos;ll get back to you as soon as possible!
             </p>
           </div>
-          <div className="flex gap-10 mt-6 text-4xl sm:text-5xl justify-center">
+          <div className="mt-6 flex justify-center gap-10 text-4xl sm:text-5xl">
             <a
               href={'https://www.linkedin.com/in/hyejinseok/'}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative transition-transform transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
+              className="relative transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
             >
               <SiLinkedin />
             </a>
@@ -55,21 +55,21 @@ export const Contact = () => {
               href={'https://github.com/hyejin-seok'}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative transition-transform transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
+              className="relative transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
             >
               <SiGithub />
-              <span className="absolute inset-0 -m-3 border-4 border-double border-transparent rounded-full transition-all duration-500 hover:border-yellow-400 dark:hover:border-yellow-400"></span>
+              <span className="absolute inset-0 -m-3 rounded-full border-4 border-double border-transparent transition-all duration-500 hover:border-yellow-400 dark:hover:border-yellow-400"></span>
             </a>
           </div>
         </div>
 
-        <div className="w-[95%] sm:w-[92%] md:w-[90%] lg:w-[85%] px-3 py-4 sm:p-4 md:p-6 lg:p-8 border-4 border-double rounded-lg border-yellow-400 dark:border-yellow-300">
+        <div className="w-[95%] rounded-lg border-4 border-double border-yellow-400 px-3 py-4 dark:border-yellow-300 sm:w-[92%] sm:p-4 md:w-[90%] md:p-6 lg:w-[85%] lg:p-8">
           <form
             className="flex flex-col gap-4 text-sm xs:text-base md:text-lg"
             action={sendEmailAction}
           >
-            <div className="flex flex-col md:flex-row justify-between">
-              <div className="flex flex-col mb-4 md:w-[44%] md:mb-0">
+            <div className="flex flex-col justify-between md:flex-row">
+              <div className="mb-4 flex flex-col md:mb-0 md:w-[44%]">
                 <label htmlFor="name" className="mb-2">
                   Name:
                 </label>
@@ -79,7 +79,7 @@ export const Contact = () => {
                   id="name"
                   required
                   placeholder="John Doe"
-                  className="h-10 text-black bg-grey  rounded pl-2 placeholder:font-normal"
+                  className="h-10 rounded bg-grey  pl-2 text-black placeholder:font-normal"
                 />
               </div>
               <div className="flex flex-col md:w-[54%]">
@@ -93,7 +93,7 @@ export const Contact = () => {
                   required
                   maxLength={100}
                   placeholder="example@example.com"
-                  className="h-10 text-black bg-grey rounded pl-2 placeholder:font-normal"
+                  className="h-10 rounded bg-grey pl-2 text-black placeholder:font-normal"
                 />
               </div>
             </div>
@@ -107,7 +107,7 @@ export const Contact = () => {
                 id="subject"
                 required
                 placeholder="Job Opportunity"
-                className="h-10 text-black bg-grey dark:bg-white rounded pl-2 placeholder:font-normal"
+                className="h-10 rounded bg-grey pl-2 text-black placeholder:font-normal dark:bg-white"
               />
             </div>
             <div className="flex flex-col">
@@ -119,15 +119,15 @@ export const Contact = () => {
                 id="message"
                 required
                 placeholder="Hi, we would like to work with you! &nbsp;🎉"
-                className="min-h-40 text-black bg-grey dark:bg-white rounded p-1 placeholder:font-normal"
+                className="min-h-40 rounded bg-grey p-1 text-black placeholder:font-normal dark:bg-white"
               />
             </div>
             <button
               type="submit"
-              className="border-4 border-double p-2 items-center rounded-lg mx-auto mt-5 font-medium border-yellow-400 dark:border-yellow-300 transition-all duration-500 hover:scale-105 hover:text-white dark:hover:text-black hover:bg-yellow-200 dark:hover:bg-yellow-100"
+              className="mx-auto mt-5 items-center rounded-lg border-4 border-double border-yellow-400 p-2 font-medium transition-all duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black"
             >
               Send Message
-              <FiSend className="inline-block pl-1 w-5 h-5 md:w-6 md:h-6" />
+              <FiSend className="inline-block h-5 w-5 pl-1 md:h-6 md:w-6" />
             </button>
           </form>
         </div>

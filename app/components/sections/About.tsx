@@ -6,11 +6,11 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="pt-12 pb-28 md:pt-18 md:pb-40 px-4 bg-yellow-100 dark:bg-cocoa"
+      className="md:pt-18 bg-yellow-100 px-4 pb-28 pt-12 dark:bg-cocoa md:pb-40"
     >
-      <div className="max-w-container mx-auto">
+      <div className="mx-auto max-w-container">
         <SectionTitle title="About Hyejin" />
-        <div className="flex flex-col items-center gap-10 lg:flex-row md:justify-center mt-12 lg:mt-20">
+        <div className="mt-12 flex flex-col items-center gap-10 md:justify-center lg:mt-20 lg:flex-row">
           <div className="w-[60%] lg:w-[45%]">
             <Image
               src="/images/about-me.jpeg"
@@ -20,7 +20,7 @@ export const About = () => {
               className="mx-auto h-auto rounded-xl ring-4 ring-yellow-200"
             />
           </div>
-          <div className="flex flex-col gap-5 text-lg md:text-xl w-[95%] xs:w-[80%] lg:w-[45%] font-medium dark:font-normal rounded-lg">
+          <div className="flex w-[95%] flex-col gap-5 rounded-lg text-lg font-medium dark:font-normal xs:w-[80%] md:text-xl lg:w-[45%]">
             <p>
               I am a full stack web developer with experience in both design and
               coding for the front end and back end. I have a passion for

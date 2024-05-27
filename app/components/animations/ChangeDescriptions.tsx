@@ -28,10 +28,10 @@ export const ChangeDescriptions = () => {
   }, [count])
 
   return (
-    <div className="xs:text-lg sm:text-xl md:text-2xl mt-3 lg:mt-6 font-semibold dark:font-normal relative flex flex-col overflow-hidden tracking-wide">
+    <div className="relative mt-3 flex flex-col overflow-hidden font-semibold tracking-wide dark:font-normal xs:text-lg sm:text-xl md:text-2xl lg:mt-6">
       <p
         ref={ref}
-        className="transform-none opacity-100 text-start"
+        className="transform-none text-start opacity-100"
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -40,7 +40,7 @@ export const ChangeDescriptions = () => {
       >
         I{' '}
         <span
-          className=" absolute flex flex-col transition-all duration-500 ease-in-expo"
+          className=" ease-in-expo absolute flex flex-col transition-all duration-500"
           style={{
             top:
               count === 0

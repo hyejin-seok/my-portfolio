@@ -11,8 +11,8 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed w-full h-16 z-10 shadow-header bg-yellow-200 dark:bg-brown top-5">
-      <div className="flex justify-between items-center w-full h-full max-w-container mx-auto px-4">
+    <header className="fixed top-5 z-10 h-16 w-full bg-yellow-200 shadow-header dark:bg-brown">
+      <div className="mx-auto flex h-full w-full max-w-container items-center justify-between px-4">
         <NextLink href="/" className="z-10 p-6 md:p-0 lg:p-6 xl:p-11">
           <Image
             src={'/images/logo.png'}
@@ -25,15 +25,15 @@ export const Header = () => {
         </NextLink>
 
         <nav
-          className={`absolute right-0 flex justify-center items-center w-full transition-all duration-500 bg-yellow-200 dark:bg-brown md:justify-end md:h-full md:static
+          className={`absolute right-0 flex w-full items-center justify-center bg-yellow-200 transition-all duration-500 dark:bg-brown md:static md:h-full md:justify-end
           ${isMenuOpen ? '-top-5 h-screen ' : 'top-[-100vh] h-[calc(100vh-20px)]'}`}
         >
           <ul
-            className={`flex flex-col items-center justify-start gap-12  text-2xl md:text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 ${isMenuOpen ? 'h-full mt-64' : 'h-auto mt-0'}`}
+            className={`flex flex-col items-center justify-start gap-12  text-2xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-xl ${isMenuOpen ? 'mt-64 h-full' : 'mt-0 h-auto'}`}
           >
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300  border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block transform cursor-pointer border-transparent transition-all  duration-300 hover:scale-110 hover:border-b-2 hover:border-yellow-300 hover:text-yellow-300"
                 to="home"
                 spy={true}
                 smooth={true}
@@ -46,7 +46,7 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block transform cursor-pointer border-transparent transition-all duration-300 hover:scale-110 hover:border-b-2 hover:border-yellow-300 hover:text-yellow-300"
                 to="about"
                 spy={true}
                 smooth={true}
@@ -59,7 +59,7 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block transform cursor-pointer border-transparent transition-all duration-300 hover:scale-110 hover:border-b-2 hover:border-yellow-300 hover:text-yellow-300"
                 to="skills"
                 spy={true}
                 smooth={true}
@@ -72,7 +72,7 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block transform cursor-pointer border-transparent transition-all duration-300 hover:scale-110 hover:border-b-2 hover:border-yellow-300 hover:text-yellow-300"
                 to="projects"
                 spy={true}
                 smooth={true}
@@ -85,7 +85,7 @@ export const Header = () => {
             </li>
             <li>
               <Link
-                className="inline-block cursor-pointer hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 border-transparent transition-all duration-300 transform hover:scale-110"
+                className="inline-block transform cursor-pointer border-transparent transition-all duration-300 hover:scale-110 hover:border-b-2 hover:border-yellow-300 hover:text-yellow-300"
                 to="contact"
                 spy={true}
                 smooth={true}
@@ -107,7 +107,7 @@ export const Header = () => {
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="z-50 md:hidden pr-6  hover:text-yellow-300 transition-all duration-300 hover:scale-110"
+          className="z-50 pr-6 transition-all  duration-300 hover:scale-110 hover:text-yellow-300 md:hidden"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {' '}
