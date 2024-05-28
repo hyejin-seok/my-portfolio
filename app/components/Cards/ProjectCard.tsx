@@ -19,36 +19,36 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <div
         role="button"
         tabIndex={project.id}
-        className={`flex flex-col items-center xl:flex-row ${reverseLayout && 'xl:flex-row-reverse'}`}
+        className={`flex flex-col items-center justify-center gap-1 xl:flex-row xl:gap-0 ${reverseLayout && 'xl:flex-row-reverse'}`}
       >
         <figure
           onClick={() => setShowModal(true)}
-          className="group relative w-full cursor-pointer overflow-hidden sm:w-[90%] md:w-[70%] lg:w-1/2"
+          className="group relative w-[300px] cursor-pointer overflow-hidden rounded-xl shadow-md shadow-yellow-200 xs:w-[380px] md:w-[600px] xl:h-[290px] xl:max-w-[47%]"
         >
           <Image
             src={`/images/projects/${project.images[0]}`}
-            // src={'/images/test2.png'}
             alt={`Screenshot of the ${project.title} project`}
-            width={1200}
-            height={800}
-            className="h-full w-full rounded-xl border-[7px] border-yellow-200 "
+            width={624}
+            height={362}
+            className=" object-cover object-top"
           />
 
           {/* BG overlay */}
           <div
-            className={`absolute inset-0 flex translate-y-full transform flex-col items-center justify-center rounded-xl bg-yellow-200 bg-opacity-80 text-xl font-semibold text-white opacity-0 group-hover:translate-y-0 dark:bg-black dark:bg-opacity-80 xl:-translate-y-0 ${reverseLayout ? 'xl:-translate-x-full xl:group-hover:translate-x-0' : 'xl:translate-x-full xl:group-hover:translate-x-0'}   pointer-events-none transition-transform duration-700 group-hover:opacity-100`}
+            className={`absolute inset-0 flex translate-y-full transform items-center justify-center rounded-md bg-yellow-200 bg-opacity-75 text-xl font-semibold text-yellow-50 opacity-70 group-hover:translate-y-0 dark:bg-black dark:bg-opacity-85 xl:-translate-y-0 ${reverseLayout ? 'xl:-translate-x-full xl:group-hover:translate-x-0' : 'xl:translate-x-full xl:group-hover:translate-x-0'}  pointer-events-none transition-transform duration-700 group-hover:opacity-100`}
           >
             <FiInfo className="pb-2 text-4xl" />
             <p>More Details</p>
           </div>
         </figure>
 
-        <div className="flex w-full cursor-default flex-col gap-3 rounded-xl bg-white p-4 dark:bg-black sm:w-[90%] sm:gap-6 md:w-[70%] md:p-8 lg:w-1/2 ">
+        {/* <div className="flex cursor-default flex-col gap-3 rounded-xl bg-white p-4 dark:bg-black sm:w-[90%] sm:gap-6 md:w-[70%] md:p-8 lg:w-1/2 "> */}
+        <div className="flex h-auto w-[300px] cursor-default flex-col gap-3 rounded-xl bg-white p-4 shadow-md shadow-yellow-200 dark:bg-black xs:w-[380px] sm:gap-6 md:w-[600px] xl:h-[290px] xl:max-w-[47%]">
           <header>
-            <h3 className="text-center text-xl font-semibold md:text-3xl">
+            <h3 className="text-center text-xl font-semibold sm:pt-2 md:text-3xl">
               {project.title}
             </h3>
-            <div className="flex flex-wrap justify-center gap-2 pt-3 text-sm sm:gap-4 md:pt-4 md:text-base">
+            <div className="flex flex-wrap justify-center gap-1 pt-2 text-sm sm:gap-3 sm:pt-3 md:text-base">
               {project.techStacks.map((stack) => (
                 <div
                   className="w-fit rounded-lg border-4 border-double border-yellow-200 p-1"
@@ -59,7 +59,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               ))}
             </div>
           </header>
-          <p className="line-clamp-4 whitespace-pre-line pt-2 text-base md:pt-4 md:text-lg">
+          <p className="line-clamp-3 whitespace-pre-line text-base md:text-lg">
             {project.description}
           </p>
           <footer className="flex flex-col items-center justify-center gap-4 xs:flex-row">

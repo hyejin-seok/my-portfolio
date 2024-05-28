@@ -35,18 +35,18 @@ export const ProjectModal = ({
         </button>
 
         <article className="max-h-[80vh] overflow-y-auto">
-          <figure className="h-64">
+          <figure className="h-64 ">
             <Image
               src={`/images/projects/${project.images[0]}`}
               // src={'/images/test2.png'}
               alt={`Screenshot of the ${project.title} project`}
               width={624}
               height={362}
-              className="h-full w-full rounded-lg border-[7px] border-yellow-200 "
+              className="h-full w-full rounded-xl shadow-md shadow-yellow-200"
             />
           </figure>
 
-          <div className="mx-auto flex w-full flex-col gap-4 rounded-lg md:gap-8">
+          <div className="mx-auto flex w-full flex-col gap-4 rounded-lg  md:gap-8">
             <header>
               <h3 className="pt-6 text-center text-2xl font-semibold md:pt-10 md:text-3xl">
                 {project.title}

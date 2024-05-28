@@ -12,7 +12,7 @@ export const Projects = () => {
     >
       <div className="mx-auto max-w-container">
         <SectionTitle title="Featured Projects" />
-        <div className="mt-10 flex flex-col flex-wrap gap-24 px-4 md:mt-20 md:flex-row">
+        <div className="mt-10 flex flex-col flex-wrap justify-center gap-24 px-4 md:mt-20 md:flex-row">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
