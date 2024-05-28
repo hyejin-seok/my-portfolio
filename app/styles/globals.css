@@ -5,6 +5,14 @@
 @import 'hero-section.css';
 @import 'components.css';
 
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
 header::before {
   position: absolute;
   content: '';
