@@ -6,13 +6,7 @@ import { ProjectType } from '@/app/data'
 import { SiGithub } from 'react-icons/si'
 import { FiExternalLink, FiX, FiLayers, FiFileText } from 'react-icons/fi'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-import { useState } from 'react'
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
 type ProjectModalProps = {
   project: ProjectType
@@ -25,7 +19,16 @@ export const ProjectModal = ({
   showModal,
   setShowModal
 }: ProjectModalProps) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const isPageSite = project.type === 'page'
+  const scrollEffect = () => {
+    const swiperContainer = document.querySelector('.swiper-container')
+    if (swiperContainer) {
+      swiperContainer.scroll({
+        top: swiperContainer.scrollHeight,
+        behavior: 'smooth'
+      })
+    }
+  }
 
   return (
     <div
@@ -47,60 +50,67 @@ export const ProjectModal = ({
         </button>
 
         <article className="max-h-[80vh] overflow-y-auto">
-          <figure>
-            <div className="relative h-96 w-full overflow-hidden">
-              <Swiper
-                loop={true}
-                spaceBetween={10}
-                navigation={true}
-                thumbs={{ swiper: thumbsSwiper }}
-                modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper2"
-              >
-                {project.images.map((image) => (
-                  <SwiperSlide key={image}>
-                    <div className="mx-auto h-96 w-full ">
-                      <a href={`/images/projects/${image}`} target="_blank">
+          <figure className="h-64 ">
+            {isPageSite ? (
+              <div className="swiper-container relative h-96 w-full overflow-hidden">
+                <Swiper
+                  direction="vertical"
+                  autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false
+                  }}
+                  onSlideChange={scrollEffect}
+                  modules={[Autoplay]}
+                >
+                  <SwiperSlide>
+                    <div className="mx-auto h-96 w-[95%] border-2 border-red-500">
+                      <img
+                        src={`/images/projects/${project.images[1]}`}
+                        alt={`Screenshot of the ${project.title} project`}
+                        width={624}
+                        height={362}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            ) : (
+              <div className="relative h-96 w-full overflow-hidden">
+                <Swiper
+                  direction="horizontal"
+                  slidesPerView={1}
+                  navigation={true}
+                  pagination={{ clickable: true }}
+                  autoplay={{ delay: 5000 }}
+                  modules={[Autoplay, Pagination, Navigation]}
+                  // className="mySwiper"
+                >
+                  {project.images.map((image) => (
+                    <SwiperSlide key={image}>
+                      <div className="mx-auto h-96 w-[95%] border-2 border-red-500">
                         <img
                           src={`/images/projects/${image}`}
                           width={624}
                           height={362}
                           alt={`Screenshot of the ${project.title} project`}
-                          className="h-full w-full cursor-zoom-in rounded-md border-[6px] border-yellow-100 object-cover object-top"
+                          className="h-full w-full object-cover object-top"
                         />
-                      </a>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            )}
 
-            <div className="mx-auto mt-2 h-20 w-full overflow-hidden">
-              <Swiper
-                onSwiper={setThumbsSwiper}
-                loop={true}
-                spaceBetween={10}
-                slidesPerView={4}
-                freeMode={true}
-                watchSlidesProgress={true}
-                modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper"
-              >
-                {project.images.map((image) => (
-                  <SwiperSlide key={image}>
-                    <div className="max-h-[80px] cursor-pointer overflow-hidden rounded-md shadow-md">
-                      <img
-                        src={`/images/projects/${image}`}
-                        width={624}
-                        height={400}
-                        alt={`Screenshot of the ${project.title} project`}
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+            {/*             
+            <Image
+              src={`/images/projects/${project.images[1]}`}
+              alt={`Screenshot of the ${project.title} project`}
+              width={624}
+              height={362}
+              className="h-full w-full rounded-xl shadow-md scroll-smooth focus:scroll-auto cursor-pointer hover:scroll-auto shadow-yellow-200"
+            /> */}
           </figure>
 
           <div className="mx-auto flex w-full flex-col gap-4 rounded-lg  md:gap-8">

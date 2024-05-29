@@ -23,3 +23,18 @@ header::before {
   z-index: -1;
   backdrop-filter: blur(10px);
 }
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #ecd5c3;
+}
