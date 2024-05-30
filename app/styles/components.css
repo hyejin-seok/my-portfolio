@@ -24,3 +24,19 @@
     0px 0px 5px #deab90,
     0px 0px 10px #deab90;
 }
+
+/* swiper */
+.thumbnail-swiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.thumbnail-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #d7a57f;
+}

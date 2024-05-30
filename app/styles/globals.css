@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
+
 @import 'hero-section.css';
 @import 'components.css';
 
@@ -22,19 +27,4 @@ header::before {
   background: transparent;
   z-index: -1;
   backdrop-filter: blur(10px);
-}
-
-.mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  color: #ecd5c3;
 }

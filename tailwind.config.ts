@@ -48,7 +48,10 @@ const config: Config = {
       },
       animation: {
         floating: 'floating 3s ease-in-out infinite',
-        'bounce-slow': 'bounce 3s linear infinite'
+        'bounce-slow': 'bounce 3s linear infinite',
+        'scroll-down': 'scroll-down 2s infinite',
+        'scroll-top': 'scroll-top 2s infinite',
+        'scroll-whole': 'scroll-whole 20s linear infinite'
       },
       keyframes: {
         floating: {
@@ -61,6 +64,18 @@ const config: Config = {
           '100%': {
             transform: 'translate(0, -0px)'
           }
+        },
+        'scroll-down': {
+          '0%': { opacity: '1', top: '7px' },
+          '100%': { opacity: '0', top: '33px' }
+        },
+        'scroll-top': {
+          '0%': { opacity: '1', top: '33px' },
+          '100%': { opacity: '0', top: '7px' }
+        },
+        'scroll-whole': {
+          '0%, 7%': { transform: 'translateY(0%)' },
+          '100%': { transform: 'translateY(-100%)' }
         }
       }
     },

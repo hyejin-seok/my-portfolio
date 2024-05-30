@@ -1,18 +1,10 @@
 'use client'
 
-// import Image from 'next/image'
-// 임시. To Do: remove this
 import { ProjectType } from '@/app/data'
 import { SiGithub } from 'react-icons/si'
 import { FiExternalLink, FiX, FiLayers, FiFileText } from 'react-icons/fi'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-import { useState } from 'react'
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
+import { PageDisplay } from './PageDisplay'
+import { AppGallery } from './AppGallery'
 
 type ProjectModalProps = {
   project: ProjectType
@@ -25,7 +17,7 @@ export const ProjectModal = ({
   showModal,
   setShowModal
 }: ProjectModalProps) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const isPageSite = project.type === 'page'
 
   return (
     <div
@@ -35,9 +27,9 @@ export const ProjectModal = ({
       aria-modal="true"
     >
       {/* BG overlay */}
-      <div className="fixed inset-0 bg-black opacity-80 transition-opacity dark:bg-white "></div>
+      <div className="otransition-opacity fixed inset-0 bg-slate-500 opacity-80"></div>
       {/* Modal content */}
-      <div className="relative mx-auto w-[95%] max-w-4xl transform overflow-auto rounded-xl bg-white px-4 py-14 shadow-hero-img-light transition-all dark:bg-cocoa dark:shadow-hero-img-dark md:w-[80%] md:px-10 lg:px-14 ">
+      <div className="relative mx-auto w-[95%] max-w-4xl transform overflow-auto rounded-xl bg-yellow-50 px-4 py-14 shadow-lg transition-all dark:bg-cocoa  md:w-[80%] md:px-10 lg:px-14 ">
         <button
           onClick={() => setShowModal(false)}
           type="button"
@@ -48,73 +40,28 @@ export const ProjectModal = ({
 
         <article className="max-h-[80vh] overflow-y-auto">
           <figure>
-            <div className="relative h-96 w-full overflow-hidden">
-              <Swiper
-                loop={true}
-                spaceBetween={10}
-                navigation={true}
-                thumbs={{ swiper: thumbsSwiper }}
-                modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper2"
-              >
-                {project.images.map((image) => (
-                  <SwiperSlide key={image}>
-                    <div className="mx-auto h-96 w-full ">
-                      <a href={`/images/projects/${image}`} target="_blank">
-                        <img
-                          src={`/images/projects/${image}`}
-                          width={624}
-                          height={362}
-                          alt={`Screenshot of the ${project.title} project`}
-                          className="h-full w-full cursor-zoom-in rounded-md border-[6px] border-yellow-100 object-cover object-top"
-                        />
-                      </a>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-
-            <div className="mx-auto mt-2 h-20 w-full overflow-hidden">
-              <Swiper
-                onSwiper={setThumbsSwiper}
-                loop={true}
-                spaceBetween={10}
-                slidesPerView={4}
-                freeMode={true}
-                watchSlidesProgress={true}
-                modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper"
-              >
-                {project.images.map((image) => (
-                  <SwiperSlide key={image}>
-                    <div className="max-h-[80px] cursor-pointer overflow-hidden rounded-md shadow-md">
-                      <img
-                        src={`/images/projects/${image}`}
-                        width={624}
-                        height={400}
-                        alt={`Screenshot of the ${project.title} project`}
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+            {isPageSite ? (
+              <PageDisplay
+                imageUrl={`/images/projects/${project.images[1]}`}
+                altText={`Screenshot of the ${project.title} project`}
+              />
+            ) : (
+              <AppGallery images={project.images} title={project.title} />
+            )}
           </figure>
 
           <div className="mx-auto flex w-full flex-col gap-4 rounded-lg  md:gap-8">
             <header>
-              <h3 className="pt-6 text-center text-2xl font-semibold md:pt-10 md:text-3xl">
+              <h3 className="pt-6 text-center text-xl font-semibold md:pt-10 md:text-2xl">
                 {project.title}
               </h3>
               <h4 className="flex gap-2 pt-4 text-lg font-semibold text-yellow-200 md:pt-6 md:text-xl">
                 {/* 아이콘 삭제시 위의 flex와 gap-2 2가지 삭제필요 */}
-                <FiLayers className="text-2xl  md:text-3xl" />
+                <FiLayers className="text-xl  md:text-2xl" />
                 Tech Stack:
               </h4>
 
-              <div className="flex flex-wrap gap-3 pt-2 text-sm md:gap-4  md:text-base">
+              <div className="flex flex-wrap gap-3 pt-2 text-xs md:text-sm">
                 {project.techStacks.map((stack) => (
                   <div
                     className="w-fit rounded-lg border-4 border-double border-yellow-200 p-1"
@@ -128,10 +75,10 @@ export const ProjectModal = ({
             <div>
               <h4 className="flex gap-2 text-lg font-semibold text-yellow-200 md:text-xl">
                 {/* 아이콘 삭제시 위의 flex, gap-2 2가지 삭제필요 */}
-                <FiFileText className="text-2xl  md:text-3xl" />
+                <FiFileText className="text-xl  md:text-2xl" />
                 Description:
               </h4>
-              <p className="whitespace-pre-line pt-1 text-base md:text-lg">
+              <p className="whitespace-pre-line pt-1 text-sm md:text-base">
                 {project.description}
               </p>
             </div>
@@ -139,7 +86,7 @@ export const ProjectModal = ({
               {project.sourceCode && (
                 <div>
                   <h4 className="flex gap-2 pb-1 text-base font-semibold text-yellow-200 md:text-xl ">
-                    <SiGithub className="text-2xl md:text-3xl" />
+                    <SiGithub className="text-xl md:text-2xl" />
                     Source Code:
                   </h4>
                   <a

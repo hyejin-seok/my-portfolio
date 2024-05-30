@@ -31,7 +31,7 @@ export const Contact = () => {
       <SectionTitle title="Get In Touch" />
       <div className="mt-10 flex flex-col items-center justify-center gap-4 font-semibold dark:font-normal md:px-4 lg:mt-14">
         <div className="mb-7">
-          <div className="flex flex-col gap-4 px-4 text-center text-xl md:text-2xl">
+          <div className="flex flex-col gap-4 px-4 text-center text-lg font-medium md:text-xl">
             <p>I&apos;m currently open to new opportunities.</p>
             <p>
               Whether you have a question or just want to say hi,
@@ -58,7 +58,7 @@ export const Contact = () => {
               className="relative transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
             >
               <SiGithub />
-              <span className="absolute inset-0 -m-3 rounded-full border-4 border-double border-transparent transition-all duration-500 hover:border-yellow-400 dark:hover:border-yellow-400"></span>
+              {/* <span className="absolute inset-0 -m-3 rounded-full border-4 border-double border-transparent transition-all duration-500 hover:border-yellow-400 dark:hover:border-yellow-400"></span> */}
             </a>
           </div>
         </div>

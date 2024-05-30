@@ -6,6 +6,7 @@ import { FiArrowRightCircle } from 'react-icons/fi'
 import { useTheme } from 'next-themes'
 import { ChangeDescriptions } from '../Animations'
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
+import { ScrollDown } from '../Buttons'
 
 export const Hero = () => {
   const { theme } = useTheme()
@@ -15,9 +16,9 @@ export const Hero = () => {
       className="mx-auto max-w-container px-4 pb-16 pt-4 md:py-20"
       id="home"
     >
-      <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[600px] lg:flex-row ">
+      <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[580px] lg:flex-row ">
         <div className="order-last mt-5 md:mt-0 lg:order-first ">
-          <h2 className="mb-8 w-fit rounded-xl bg-yellow-200 px-4 py-2 text-center text-xl font-bold tracking-wide dark:bg-brown dark:font-semibold md:text-2xl">
+          <h2 className="mb-8 w-fit rounded-xl bg-yellow-200 px-4 py-2 text-center text-lg font-bold tracking-wide dark:bg-brown dark:font-semibold">
             Welcome To My Portfolio!
           </h2>
           <span className="block text-xl font-bold tracking-wide dark:font-semibold md:text-2xl">
@@ -57,14 +58,17 @@ export const Hero = () => {
           />
         </div>
       </div>
-      <button
+
+      {/* <button
         className="mx-auto mt-10 flex w-fit animate-bounce font-semibold text-yellow-400 dark:text-yellow-300 md:mt-0"
         aria-label="Scroll to About section"
       >
         <Link to="about" spy={true} smooth={true} offset={-85} duration={700}>
           <HiOutlineChevronDoubleDown className="text-3xl transition-all  duration-500 hover:scale-110 sm:text-4xl" />
         </Link>
-      </button>
+      </button> */}
+
+      <ScrollDown />
     </section>
   )
 }

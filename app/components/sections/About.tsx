@@ -20,7 +20,7 @@ export const About = () => {
               className="mx-auto h-auto rounded-xl ring-4 ring-yellow-200"
             />
           </div>
-          <div className="flex w-[95%] flex-col gap-5 rounded-lg text-lg font-medium dark:font-normal xs:w-[80%] md:text-xl lg:w-[45%]">
+          <div className="flex w-[95%] flex-col gap-5 rounded-lg font-medium dark:font-normal xs:w-[80%] md:text-lg lg:w-[45%]">
             <p>
               I am a full stack web developer with experience in both design and
               coding for the front end and back end. I have a passion for

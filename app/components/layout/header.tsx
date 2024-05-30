@@ -29,7 +29,7 @@ export const Header = () => {
           ${isMenuOpen ? '-top-5 h-screen ' : 'top-[-100vh] h-[calc(100vh-20px)]'}`}
         >
           <ul
-            className={`flex flex-col items-center justify-start gap-12  text-2xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-xl ${isMenuOpen ? 'mt-64 h-full' : 'mt-0 h-auto'}`}
+            className={`flex flex-col items-center justify-start gap-12 text-xl font-semibold dark:font-medium md:flex-row md:justify-end md:gap-10 md:text-lg ${isMenuOpen ? 'mt-72 h-full' : 'mt-0 h-auto'}`}
           >
             <li>
               <Link

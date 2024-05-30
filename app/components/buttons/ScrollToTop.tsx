@@ -1,8 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
-// import { FiChevronsUp } from 'react-icons/fi'
+import { Link } from 'react-scroll'
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -10,7 +9,7 @@ export const ScrollToTop = () => {
   const handleScroll = () => {
     const scrollTop = window.scrollY
 
-    if (scrollTop > 100) {
+    if (scrollTop > 800) {
       setIsVisible(true)
     } else {
       setIsVisible(false)
@@ -24,22 +23,24 @@ export const ScrollToTop = () => {
     }
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
-
   return (
-    <button
-      onClick={scrollToTop}
-      aria-label="Scroll to top"
-      // className={`flex flex-col items-center fixed bottom-4 right-4 p-2 text-xs sm:text-sm md:text-base font-semibold rounded-full bg-yellow-300 dark:bg-yellow-200 shadow-scroll-to-top transition-all duration-500 hover:scale-110 ${isVisible ? 'opacity-100' : 'opacity-0'} `}
-      className={`fixed bottom-4 right-4 flex animate-bounce-slow flex-col items-center rounded-full p-2 text-xs font-bold text-yellow-400 shadow-scroll-to-top hover:bg-yellow-300 hover:text-white dark:text-yellow-300 dark:hover:text-black sm:text-sm md:text-base  ${isVisible ? 'opacity-100' : 'opacity-0'} `}
+    <Link
+      to="home"
+      spy={true}
+      smooth={true}
+      offset={-85}
+      duration={700}
+      aria-label="Scroll to About section"
     >
-      <HiOutlineChevronDoubleUp className="text-lg sm:text-xl md:text-2xl" />
-      Top
-    </button>
+      <button
+        aria-label="Scroll to top"
+        className={`fixed bottom-4 right-4 font-medium text-yellow-200 hover:opacity-70 focus:outline-none ${isVisible ? 'opacity-100' : 'opacity-0'} `}
+      >
+        Top
+        <div className="relative mt-1 h-14 w-9 rounded-full border-2 border-yellow-200">
+          <div className="before:absolute before:left-1/2 before:top-2.5 before:h-3 before:w-3 before:-translate-x-1/2 before:transform before:animate-scroll-top before:rounded-full before:bg-yellow-200 before:content-['']"></div>
+        </div>
+      </button>
+    </Link>
   )
 }
