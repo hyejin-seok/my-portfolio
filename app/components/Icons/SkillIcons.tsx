@@ -195,8 +195,8 @@ export const SkillIcons = ({ type }: SkillCategory) => {
         >
           {skill.icon}
           <span
-            className="absolute left-1/2 mx-auto mt-6 w-max -translate-x-1/2  translate-y-full px-2 text-black
-    opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100 dark:text-white sm:mt-5"
+            className="absolute left-1/2 mx-auto mt-[1.65rem] w-max -translate-x-1/2 translate-y-full px-2 text-black opacity-0
+    transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100 dark:text-white sm:mt-6"
           >
             {skill.name}
           </span>

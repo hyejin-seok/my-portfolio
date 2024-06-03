@@ -51,7 +51,7 @@ const config: Config = {
         'bounce-slow': 'bounce 3s linear infinite',
         'scroll-down': 'scroll-down 2s infinite',
         'scroll-top': 'scroll-top 2s infinite',
-        'scroll-whole': 'scroll-whole 20s linear infinite'
+        'scroll-whole': 'scroll-whole 15s linear infinite'
       },
       keyframes: {
         floating: {

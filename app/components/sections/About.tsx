@@ -31,7 +31,7 @@ export const About = () => {
               Coding caught my interest at the age of nine when I began
               exploring HTML tags. Despite a pause during my academically
               intense school years and personal commitments, I found my way back
-              to coding in Vancouver, feeling as if it was meant to happen.{' '}
+              to coding in Vancouver, feeling as if it was meant to&nbsp;happen.{' '}
             </p>
             <p>
               I am detail-oriented and dedicated, with a strong work ethic. With

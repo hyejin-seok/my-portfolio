@@ -96,7 +96,7 @@ export const projects: ProjectType[] = [
     description:
       'This is the first landing page I built, where I designed the entire structure and logo myself. My goal was to use only HTML and CSS, without relying on any CSS libraries. I implemented the rotating testimonials section and the hamburger navigation bar using only pure CSS, without any JavaScript. \n This project was an excellent opportunity to practice and refine my basic HTML and CSS skills.',
     techStacks: ['HTML', 'CSS'],
-    sourceCode: 'https://github.com/hyejin-seok/channel-chat-app',
+    sourceCode: 'https://github.com/hyejin-seok/Jewellery-Page',
     liveDemo: null
   },
   {
@@ -107,7 +107,7 @@ export const projects: ProjectType[] = [
     description:
       'This is an infographic, and it is  the first project I created after learning basic HTML and CSS. I designed and developed it myself, thoroughly enjoying the process. Through this project, I discovered my strong interest in both design and coding. \n I chose the topic of climate change because it is a significant issue today, and I wanted to raise awareness about its impact.',
     techStacks: ['HTML', 'CSS'],
-    sourceCode: 'https://github.com/hyejin-seok/channel-chat-app',
+    sourceCode: 'https://github.com/hyejin-seok/climate-infographic',
     liveDemo: null
   }
 ]

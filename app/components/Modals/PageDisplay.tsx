@@ -5,8 +5,8 @@ type PageDisplayProps = {
 
 export const PageDisplay = ({ imageUrl, altText }: PageDisplayProps) => {
   return (
-    <div className="h-96 w-full overflow-hidden rounded-md">
-      <div className="relative min-h-[200%] w-full animate-scroll-whole ">
+    <div className="mx-auto mb-2 mt-2 h-60 w-[95%] overflow-hidden rounded-md sm:mb-0 md:h-96">
+      <div className="relative min-h-[200%] animate-scroll-whole  ">
         <a href={imageUrl} target="_blank">
           <img
             src={imageUrl}
