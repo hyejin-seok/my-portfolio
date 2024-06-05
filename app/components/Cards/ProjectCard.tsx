@@ -92,7 +92,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </footer>
         </div>
       </div>
-
       {showModal && (
         <ProjectModal
           project={project}

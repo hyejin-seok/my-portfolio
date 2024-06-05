@@ -1,1 +1,6 @@
 export { ChangeDescriptions } from './ChangeDescriptions'
+export { FadeInDown } from './FadeInDown'
+export { FadeInUp } from './FadeInUp'
+export { SlideInFromLeft } from './SlideInFromLeft'
+export { StaggeredChild } from './StaggeredChild'
+export { StaggeredReveal } from './StaggeredReveal'
