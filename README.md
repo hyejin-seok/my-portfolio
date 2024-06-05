@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio Site
 
-## Getting Started
+## Descriptions
 
-First, run the development server:
+Welcome to my personal portfolio website which not only showcases my skills and projects as a web developer but also highlights my design capabilities using Figma and Next.js. Key features like a dynamic theme switcher, scroll buttons, background music, and interactive animations showcase both functionality and aesthetics. This site is a reflection of my personal style and technical expertise.
+
+## Features
+
+- **Dynamic Theme Switching**: Toggle between dark and light modes for a comfortable viewing experience regardless of the environment or time of day.
+- **Scroll Buttons**: Easy navigation with "Scroll Down" to move to the next section and "Scroll to Top" button that appears as you move away from the top.
+- **Background Music**: An optional background music feature that users can turn on to enhance their experience while browsing through the portfolio.
+- **Interactive Animations**: Utilize Framer Motion, Tailwind CSS to create fluid, eye-catching animations that make the UI lively and engaging.
+- **Responsive Design**: Ensures a seamless experience across all device sizes.
+- **Email Contact Form**: Includes a functional contact form to facilitate easy communication.
+
+## Technologies
+
+- Next.js
+- TypeScript
+- Next Themes
+- Framer Motion
+- Tailwind CSS
+
+## Requirements
+
+- Node.js: installed on your machine. [Node.js](https://nodejs.org/en)
+
+## Installation
+
+Run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributor
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-# my-portfolio
+🌻 [Hyejin](https://github.com/hyejin-seok)

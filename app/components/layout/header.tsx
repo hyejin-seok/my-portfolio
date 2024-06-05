@@ -20,7 +20,6 @@ export const Header = () => {
             priority={true}
             width="48"
             height="48"
-            // className="transition-all duration-300 transform hover:scale-110"
           />
         </NextLink>
 

@@ -38,7 +38,7 @@ export const ScrollToTop = () => {
       >
         Top
         <div className="relative mt-1 h-14 w-9 rounded-full border-2 border-yellow-400 dark:border-yellow-200 ">
-          <div className="before:absolute before:left-1/2 before:top-2.5 before:h-3 before:w-3 before:-translate-x-1/2 before:transform before:animate-scroll-top before:rounded-full before:bg-yellow-200 before:content-['']"></div>
+          <div className="before:absolute before:left-1/2 before:top-2.5 before:h-3 before:w-3 before:-translate-x-1/2 before:transform before:animate-scroll-top before:rounded-full before:bg-yellow-400 before:content-[''] before:dark:bg-yellow-200"></div>
         </div>
       </button>
     </Link>
