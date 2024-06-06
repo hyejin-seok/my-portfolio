@@ -1,12 +1,18 @@
 'use client'
-import { motion, useAnimation, useInView } from 'framer-motion'
+import { motion, useAnimation, useInView, Variants } from 'framer-motion'
 import React, { useRef, useEffect } from 'react'
 
-type FadeInDownProps = {
+type AnimationWrapperProps = {
   children: React.ReactNode
+  variants: Variants
+  className?: string
 }
 
-export const FadeInDown = ({ children }: FadeInDownProps) => {
+export const AnimationWrapper = ({
+  children,
+  className,
+  variants
+}: AnimationWrapperProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const controls = useAnimation()
@@ -20,13 +26,10 @@ export const FadeInDown = ({ children }: FadeInDownProps) => {
   return (
     <motion.div
       ref={ref}
+      className={className}
       initial="hidden"
       animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: -60 },
-        visible: { opacity: 1, y: 0 }
-      }}
-      transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
+      variants={variants}
     >
       {children}
     </motion.div>

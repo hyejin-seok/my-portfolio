@@ -35,7 +35,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
           {/* BG overlay */}
           <div
-            className={`absolute inset-0 flex translate-y-full transform items-center justify-center  bg-yellow-200 bg-opacity-70 text-xl font-semibold text-yellow-50 opacity-70 group-hover:translate-y-0 dark:bg-black dark:bg-opacity-80 xl:-translate-y-0 ${reverseLayout ? 'xl:-translate-x-full xl:group-hover:translate-x-0' : 'xl:translate-x-full xl:group-hover:translate-x-0'}  pointer-events-none transition-transform duration-700 group-hover:opacity-100`}
+            className={`absolute inset-0 flex translate-y-full transform items-center justify-center  bg-yellow-200 bg-opacity-70 text-xl font-semibold text-yellow-50 opacity-70 group-hover:translate-y-0 dark:bg-black dark:bg-opacity-80 xl:-translate-y-0 ${reverseLayout ? 'xl:-translate-x-full xl:group-hover:translate-x-0' : 'xl:translate-x-full xl:group-hover:translate-x-0'} pointer-events-none transition-transform duration-700 group-hover:opacity-100`}
           >
             <FiInfo className="pr-2 text-2xl md:text-4xl" />
             <p>More Details</p>

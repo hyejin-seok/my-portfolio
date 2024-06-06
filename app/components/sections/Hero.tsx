@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { FiArrowRightCircle } from 'react-icons/fi'
 import { useTheme } from 'next-themes'
 import { ChangeDescriptions } from '../Animations'
-import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
+// import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
 import { ScrollDown } from '../Buttons'
 
 export const Hero = () => {

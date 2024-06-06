@@ -1,7 +1,7 @@
 'use client'
 import { SectionTitle } from '../Titles'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
-import { FadeInUp, SlideInFromLeft } from '../Animations'
+import { AnimationWrapper, slideInFromLeftVar } from '../Animations'
 import { EmailForm } from '../Emails'
 
 export const Contact = () => {
@@ -12,7 +12,7 @@ export const Contact = () => {
     >
       <SectionTitle title="Get In Touch" />
       <div className="mt-10 flex flex-col items-center justify-center gap-4 font-semibold dark:font-normal md:px-4 lg:mt-14">
-        <SlideInFromLeft>
+        <AnimationWrapper variants={slideInFromLeftVar}>
           <div className="mb-7">
             <div className="flex flex-col gap-4 px-4 text-center text-lg font-medium md:text-xl">
               <p>I&apos;m currently open to new opportunities.</p>
@@ -42,7 +42,7 @@ export const Contact = () => {
               </a>
             </div>
           </div>
-        </SlideInFromLeft>
+        </AnimationWrapper>
         <EmailForm />
       </div>
     </section>

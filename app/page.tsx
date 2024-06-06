@@ -1,16 +1,16 @@
 import { Footer, Header } from './components/Layout'
 import { Hero, About, Skills, Projects, Contact } from './components/Sections'
 import { ScrollToTop } from './components/Buttons'
-import { FadeInDown } from './components/Animations'
+import { AnimationWrapper, fadeInDownVar } from './components/Animations'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-monst text-black dark:bg-black dark:text-white">
       <Header />
       <main className="pt-[5.25rem]">
-        <FadeInDown>
+        <AnimationWrapper variants={fadeInDownVar}>
           <Hero />
-        </FadeInDown>
+        </AnimationWrapper>
         <div className="h-2 bg-gradient-light dark:bg-gradient-dark"></div>
         <About />
         <div className="h-2 bg-gradient-light dark:bg-gradient-dark"></div>

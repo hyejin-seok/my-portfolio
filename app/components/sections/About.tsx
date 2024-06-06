@@ -1,7 +1,11 @@
 'use client'
 import Image from 'next/image'
 import { SectionTitle } from '../Titles'
-import { SlideInFromLeft, FadeInUp } from '../Animations'
+import {
+  AnimationWrapper,
+  slideInFromLeftVar,
+  fadeInUPVar
+} from '../Animations'
 
 export const About = () => {
   return (
@@ -13,7 +17,7 @@ export const About = () => {
         <SectionTitle title="About Hyejin" />
         <div className="mt-12 flex flex-col items-center gap-10 md:justify-center lg:mt-20 lg:flex-row">
           <div className="w-[60%] lg:w-[45%]">
-            <SlideInFromLeft>
+            <AnimationWrapper variants={slideInFromLeftVar}>
               <Image
                 src="/images/about-me.jpeg"
                 alt="my picture"
@@ -21,10 +25,10 @@ export const About = () => {
                 height="400"
                 className="mx-auto h-auto rounded-xl ring-4 ring-yellow-200"
               />
-            </SlideInFromLeft>
+            </AnimationWrapper>
           </div>
           <div className="flex w-[95%] flex-col gap-5 rounded-lg font-medium dark:font-normal xs:w-[80%] md:text-lg lg:w-[45%]">
-            <FadeInUp>
+            <AnimationWrapper variants={fadeInUPVar}>
               <p>
                 I am a full stack web developer with experience in both design
                 and coding for the front end and back end. I have a passion for
@@ -45,7 +49,7 @@ export const About = () => {
                 develop efficient, scalable, and user-friendly solutions that
                 address real-world challenges.
               </p>
-            </FadeInUp>
+            </AnimationWrapper>
           </div>
         </div>
       </div>

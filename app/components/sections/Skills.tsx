@@ -2,8 +2,11 @@
 import { SkillIcons } from '../Icons'
 import { SkillsType } from '@/app/types'
 import { SectionTitle } from '../Titles'
-import { StaggeredReveal, StaggeredChild } from '../Animations'
-// import Image from 'next/image'
+import {
+  AnimationWrapper,
+  staggeredRevealVar,
+  staggeredChildVarX
+} from '../Animations'
 
 export const Skills = () => {
   const category: SkillsType[] = ['Front-end', 'Back-end', 'Dev Tools']
@@ -14,9 +17,13 @@ export const Skills = () => {
       className="md:pt-18 mx-auto max-w-container px-4 pb-28 pt-12 md:pb-40"
     >
       <SectionTitle title="Technical Skills" />
-      <StaggeredReveal>
+      <AnimationWrapper variants={staggeredRevealVar}>
         {category.map((type, index) => (
-          <StaggeredChild key={type} index={index}>
+          <AnimationWrapper
+            key={type}
+            index={index}
+            variants={staggeredChildVarX}
+          >
             <div
               key={index}
               className="mt-10 flex flex-col items-center justify-center md:mt-14"
@@ -24,9 +31,9 @@ export const Skills = () => {
               <h3 className="text-center text-2xl font-semibold">{type}</h3>
               <SkillIcons type={type} />
             </div>
-          </StaggeredChild>
+          </AnimationWrapper>
         ))}
-      </StaggeredReveal>
+      </AnimationWrapper>
     </section>
   )
 }

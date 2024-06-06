@@ -3,7 +3,11 @@ import { ProjectCard } from '../Cards'
 // import Image from 'next/image'
 import { SectionTitle } from '../Titles'
 import { projects } from '../../data'
-import { StaggeredReveal, StaggeredChild } from '../Animations'
+import {
+  AnimationWrapper,
+  staggeredRevealVar,
+  staggeredChildVarY
+} from '../Animations'
 
 export const Projects = () => {
   return (
@@ -13,15 +17,19 @@ export const Projects = () => {
     >
       <div className="mx-auto max-w-container">
         <SectionTitle title="Featured Projects" />
-        <StaggeredReveal>
+        <AnimationWrapper variants={staggeredRevealVar}>
           <div className="mt-10 flex flex-col flex-wrap justify-center gap-24 px-4 md:mt-20 md:flex-row">
             {projects.map((project, index) => (
-              <StaggeredChild key={index} index={index}>
+              <AnimationWrapper
+                key={index}
+                index={index}
+                variants={staggeredChildVarY}
+              >
                 <ProjectCard key={project.id} project={project} />
-              </StaggeredChild>
+              </AnimationWrapper>
             ))}
           </div>
-        </StaggeredReveal>
+        </AnimationWrapper>
       </div>
     </section>
   )

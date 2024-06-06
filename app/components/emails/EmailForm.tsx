@@ -4,7 +4,7 @@ import { useFormState } from 'react-dom'
 import { toast } from 'react-hot-toast'
 import { FiSend } from 'react-icons/fi'
 import { sendEmail } from '../../action'
-import { FadeInUp } from '../Animations'
+import { AnimationWrapper, fadeInUPVar } from '../Animations'
 
 export const EmailForm = () => {
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
@@ -22,7 +22,10 @@ export const EmailForm = () => {
   }, [sendEmailState])
 
   return (
-    <FadeInUp className="w-[95%] rounded-lg border-4 border-double border-yellow-400 px-3 py-4 dark:border-yellow-300 sm:w-[92%] sm:p-4 md:w-[90%] md:p-6 lg:w-[85%] lg:p-8">
+    <AnimationWrapper
+      variants={fadeInUPVar}
+      className="w-[95%] rounded-lg border-4 border-double border-yellow-400 px-3 py-4 dark:border-yellow-300 sm:w-[92%] sm:p-4 md:w-[90%] md:p-6 lg:w-[85%] lg:p-8"
+    >
       <form
         className="flex flex-col gap-4 text-sm xs:text-base md:text-lg"
         action={sendEmailAction}
@@ -89,6 +92,6 @@ export const EmailForm = () => {
           <FiSend className="inline-block h-5 w-5 pl-1 md:h-6 md:w-6" />
         </button>
       </form>
-    </FadeInUp>
+    </AnimationWrapper>
   )
 }
