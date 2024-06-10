@@ -191,7 +191,7 @@ export const SkillIcons = ({ type }: SkillCategory) => {
       {getSkillsByCategory(type).map((skill) => (
         <li
           key={skill.name}
-          className="group relative flex h-14 w-14 rounded-xl bg-yellow-200 p-2 text-sm text-white transition-all duration-500 hover:scale-110 hover:bg-brown dark:bg-yellow-100 dark:text-black dark:hover:bg-yellow-400 sm:text-base"
+          className="hover:bg-yellow-00 group relative flex h-14 w-14 rounded-xl bg-yellow-200 p-2.5 text-sm text-white transition-all duration-500 hover:scale-110 hover:bg-yellow-800 dark:bg-yellow-100 dark:text-black dark:hover:bg-yellow-400 sm:text-base"
         >
           {skill.icon}
           <span

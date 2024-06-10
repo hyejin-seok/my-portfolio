@@ -7,8 +7,8 @@
 @import 'swiper/css/pagination';
 @import 'swiper/css/scrollbar';
 
-@import 'swiper.css';
 @import 'components.css';
+@import 'swiper.css';
 
 @layer base {
   *,
@@ -27,4 +27,8 @@ header::before {
   background: transparent;
   z-index: -1;
   backdrop-filter: blur(10px);
+}
+
+.active-link {
+  @apply scale-110 border-b-2 border-yellow-700 text-yellow-700 dark:border-yellow-300 dark:text-yellow-300;
 }

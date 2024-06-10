@@ -1,6 +1,5 @@
 'use client'
-import { motion, useAnimation, useInView, Variants } from 'framer-motion'
-import React, { useRef, useEffect } from 'react'
+import { motion, Variants } from 'framer-motion'
 
 type AnimationWrapperProps = {
   children: React.ReactNode
@@ -10,26 +9,16 @@ type AnimationWrapperProps = {
 
 export const AnimationWrapper = ({
   children,
-  className,
-  variants
+  variants,
+  className
 }: AnimationWrapperProps) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const controls = useAnimation()
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible')
-    }
-  }, [controls, isInView])
-
   return (
     <motion.div
-      ref={ref}
       className={className}
       initial="hidden"
-      animate={controls}
+      whileInView="visible"
       variants={variants}
+      viewport={{ once: true, amount: 0.3 }} //only plays once when 30% of the element is in view.
     >
       {children}
     </motion.div>

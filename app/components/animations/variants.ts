@@ -3,7 +3,7 @@ const fadeInDownVar = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1, ease: 'easeOut', delay: 0.3 }
+    transition: { duration: 0.7, delay: 0.3, ease: 'easeOut' }
   }
 }
 const fadeInUPVar = {
@@ -11,7 +11,7 @@ const fadeInUPVar = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1, ease: 'easeOut', delay: 0.3 }
+    transition: { duration: 0.7, delay: 0.2, ease: 'easeOut' }
   }
 }
 
@@ -20,7 +20,7 @@ const slideInFromLeftVar = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { ease: 'easeInOut', duration: 1, delay: 0.4 }
+    transition: { duration: 0.7, delay: 0.2, ease: 'easeInOut' }
   }
 }
 

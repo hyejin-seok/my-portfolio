@@ -14,20 +14,13 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="md:pt-18 mx-auto max-w-container px-4 pb-28 pt-12 md:pb-40"
+      className="mx-auto max-w-container px-4 pb-24 pt-24 md:pb-32 md:pt-32"
     >
       <SectionTitle title="Technical Skills" />
       <AnimationWrapper variants={staggeredRevealVar}>
-        {category.map((type, index) => (
-          <AnimationWrapper
-            key={type}
-            index={index}
-            variants={staggeredChildVarX}
-          >
-            <div
-              key={index}
-              className="mt-10 flex flex-col items-center justify-center md:mt-14"
-            >
+        {category.map((type) => (
+          <AnimationWrapper key={type} variants={staggeredChildVarX}>
+            <div className="mt-10 flex flex-col items-center justify-center md:mt-14">
               <h3 className="text-center text-2xl font-semibold">{type}</h3>
               <SkillIcons type={type} />
             </div>

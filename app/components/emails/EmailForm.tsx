@@ -86,7 +86,7 @@ export const EmailForm = () => {
         </div>
         <button
           type="submit"
-          className="mx-auto mt-5 items-center rounded-lg border-4 border-double border-yellow-400 p-2 font-medium transition-all duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black"
+          className="mx-auto mt-5 items-center rounded-lg border-4 border-double border-yellow-400 p-2 font-medium transition-all duration-500 hover:scale-105 hover:bg-yellow-400 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black"
         >
           Send Message
           <FiSend className="inline-block h-5 w-5 pl-1 md:h-6 md:w-6" />

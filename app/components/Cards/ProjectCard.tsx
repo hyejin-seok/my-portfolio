@@ -72,7 +72,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                   rel="noopener noreferrer"
                   className="transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
                 >
-                  <SiGithub className="text-2xl text-yellow-200 md:text-3xl" />
+                  <SiGithub className="text-2xl text-yellow-200 hover:text-yellow-700 md:text-3xl" />
                 </a>
               </div>
             )}
@@ -85,7 +85,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                   rel="noopener noreferrer"
                   className="transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
                 >
-                  <FiExternalLink className="text-2xl text-yellow-200 md:text-3xl" />
+                  <FiExternalLink className="text-2xl text-yellow-200 hover:text-yellow-700 md:text-3xl" />
                 </a>
               </div>
             )}

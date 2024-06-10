@@ -8,7 +8,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="md:pt-18 mx-auto max-w-container px-4 pb-28 pt-12"
+      className="mx-auto max-w-container px-4 pb-24 pt-24 md:pb-32 md:pt-32"
     >
       <SectionTitle title="Get In Touch" />
       <div className="mt-10 flex flex-col items-center justify-center gap-4 font-semibold dark:font-normal md:px-4 lg:mt-14">
@@ -27,7 +27,7 @@ export const Contact = () => {
                 href={'https://www.linkedin.com/in/hyejinseok/'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
+                className="relative transform text-yellow-200 transition-transform duration-500 hover:scale-110 hover:text-yellow-700"
               >
                 <SiLinkedin />
               </a>
@@ -35,7 +35,7 @@ export const Contact = () => {
                 href={'https://github.com/hyejin-seok'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative transform transition-transform duration-500 hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400"
+                className="relative transform text-yellow-200 transition-transform duration-500 hover:scale-110 hover:text-yellow-700"
               >
                 <SiGithub />
                 {/* <span className="absolute inset-0 -m-3 rounded-full border-4 border-double border-transparent transition-all duration-500 hover:border-yellow-400 dark:hover:border-yellow-400"></span> */}

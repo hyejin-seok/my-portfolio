@@ -5,6 +5,7 @@ import { SiGithub } from 'react-icons/si'
 import { FiExternalLink, FiX, FiLayers, FiFileText } from 'react-icons/fi'
 import { PageDisplay } from './PageDisplay'
 import { AppGallery } from './AppGallery'
+import { useEffect } from 'react'
 
 type ProjectModalProps = {
   project: ProjectType
@@ -18,6 +19,7 @@ export const ProjectModal = ({
   setShowModal
 }: ProjectModalProps) => {
   const isPageSite = project.type === 'page'
+
   const handleOverlayClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -25,6 +27,18 @@ export const ProjectModal = ({
       setShowModal(false)
     }
   }
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    // Clean-up function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [showModal])
 
   return (
     <div

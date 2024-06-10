@@ -13,7 +13,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="mx-auto max-w-container px-4 pb-16 pt-4 md:py-20"
+      className="mx-auto max-w-container px-4 pb-24 pt-4 md:pb-32 md:pt-20"
       id="home"
     >
       <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[580px] lg:flex-row ">
@@ -33,13 +33,12 @@ export const Hero = () => {
 
           <ChangeDescriptions />
 
-          <div className="mt-8 w-fit cursor-pointer rounded-lg border-4 border-double border-yellow-400 px-3 py-2 text-center text-lg font-semibold tracking-wide transition-all duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black sm:text-xl md:text-2xl lg:mt-14">
+          <div className="mt-8 w-fit cursor-pointer rounded-lg border-4 border-double border-yellow-400 px-3 py-2 text-center text-lg font-semibold tracking-wide transition-all duration-500 hover:scale-105 hover:bg-yellow-400 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black sm:text-xl md:text-2xl lg:mt-14">
             <Link
-              // className="inline-block"
               to="contact"
               spy={true}
               smooth={true}
-              offset={-85}
+              offset={0}
               duration={700}
             >
               Contact me
@@ -58,15 +57,6 @@ export const Hero = () => {
           />
         </div>
       </div>
-
-      {/* <button
-        className="mx-auto mt-10 flex w-fit animate-bounce font-semibold text-yellow-400 dark:text-yellow-300 md:mt-0"
-        aria-label="Scroll to About section"
-      >
-        <Link to="about" spy={true} smooth={true} offset={-85} duration={700}>
-          <HiOutlineChevronDoubleDown className="text-3xl transition-all  duration-500 hover:scale-110 sm:text-4xl" />
-        </Link>
-      </button> */}
 
       <ScrollDown />
     </section>
