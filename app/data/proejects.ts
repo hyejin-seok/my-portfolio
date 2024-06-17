@@ -149,7 +149,8 @@ export const projects: ProjectType[] = [
       'Dynamic Theme Switching: Toggle between dark and light modes for a comfortable viewing experience regardless of the environment or time of day.',
       'Contact Form: Seamlessly send emails via a user-friendly form, facilitated by the Resend library.',
       'Scroll Buttons: Easy navigation with "Scroll Down" to move to the next section and "Scroll to Top" button that appears as you move away from the top.',
-      'Background Music: An optional background music feature that users can turn on to enhance their experience while browsing through the portfolio.'
+      'Background Music: An optional background music feature that users can turn on to enhance their experience while browsing through the portfolio.',
+      'Fully Responsive Design: Ensures a seamless experience across all device sizes.'
     ],
     techStacks: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Framer', 'Figma'],
     sourceCode: 'https://github.com/hyejin-seok/my-portfolio',

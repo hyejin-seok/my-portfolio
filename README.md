@@ -1,24 +1,39 @@
 # My Portfolio Site
 
-## Descriptions
+## Table of contents
 
-Welcome to my personal portfolio website which not only showcases my skills and projects as a web developer but also highlights my design capabilities using Figma and Next.js. Key features like a dynamic theme switcher, scroll buttons, background music, and interactive animations showcase both functionality and aesthetics. This site is a reflection of my personal style and technical expertise.
+- Description
+- Key Features
+- Technologies
+- Requirements
+- Installation
+- Contributor
 
-## Features
+## Description
 
+Welcome to my personal portfolio website which not only showcases my skills and projects as a web developer but also highlights my design capabilities using Figma and Next.js. <br>
+This site is a reflection of my personal style and technical expertise, featuring both functionality and aesthetics.
+
+<br>
+
+![portfolio-3](https://github.com/hyejin-seok/my-portfolio/assets/132785671/739034ad-3b30-4f52-bad2-3ec36c821c30)
+
+## Key Features
+
+- **Interactive Animations**: Utilize Framer Motion, Tailwind CSS to create fluid, eye-catching animations that make the UI lively and engaging.
+- **Project Card/Modal**: Clickable project cards reveal detailed modals with dynamic images, tech stack, key features, source code, and live demo links.
 - **Dynamic Theme Switching**: Toggle between dark and light modes for a comfortable viewing experience regardless of the environment or time of day.
+- **Contact Form**: Seamlessly send emails via a user-friendly form, facilitated by the Resend library.
 - **Scroll Buttons**: Easy navigation with "Scroll Down" to move to the next section and "Scroll to Top" button that appears as you move away from the top.
 - **Background Music**: An optional background music feature that users can turn on to enhance their experience while browsing through the portfolio.
-- **Interactive Animations**: Utilize Framer Motion, Tailwind CSS to create fluid, eye-catching animations that make the UI lively and engaging.
 - **Responsive Design**: Ensures a seamless experience across all device sizes.
-- **Email Contact Form**: Includes a functional contact form to facilitate easy communication.
 
 ## Technologies
 
 - Next.js
 - TypeScript
-- Next Themes
 - Framer Motion
+- Next Themes
 - Tailwind CSS
 
 ## Requirements
