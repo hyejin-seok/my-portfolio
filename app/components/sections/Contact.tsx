@@ -38,7 +38,6 @@ export const Contact = () => {
                 className="relative transform text-yellow-200 transition-transform duration-500 hover:scale-110 hover:text-yellow-700"
               >
                 <SiGithub />
-                {/* <span className="absolute inset-0 -m-3 rounded-full border-4 border-double border-transparent transition-all duration-500 hover:border-yellow-400 dark:hover:border-yellow-400"></span> */}
               </a>
             </div>
           </div>

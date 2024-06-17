@@ -3,14 +3,10 @@
 import { Link } from 'react-scroll'
 import Image from 'next/image'
 import { FiArrowRightCircle } from 'react-icons/fi'
-import { useTheme } from 'next-themes'
 import { ChangeDescriptions } from '../Animations'
-// import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
 import { ScrollDown } from '../Buttons'
 
 export const Hero = () => {
-  const { theme } = useTheme()
-
   return (
     <section
       className="mx-auto max-w-container px-4 pb-24 pt-4 md:pb-32 md:pt-20"
@@ -48,7 +44,7 @@ export const Hero = () => {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/images/hero-pic.png"
+            src="/images/hero-pic.webp"
             alt="coding girl image"
             width="500"
             height="500"

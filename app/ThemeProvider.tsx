@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     return null
   }
   return (
-    <NextThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <NextThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       {children}
     </NextThemeProvider>
   )

@@ -8,7 +8,7 @@ export const ScrollDown = () => {
       to="about"
       spy={true}
       smooth={true}
-      offset={-30}
+      offset={10}
       duration={700}
       aria-label="Scroll to About section"
       className="flex cursor-pointer justify-center"

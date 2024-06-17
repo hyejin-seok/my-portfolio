@@ -1,18 +1,27 @@
+/// <reference lib="dom" />
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 import { ProjectType } from '@/app/data'
 import { SiGithub } from 'react-icons/si'
 import { FiExternalLink, FiInfo } from 'react-icons/fi'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { ProjectModal } from '../Modals'
 
 type ProjectCardProps = {
   project: ProjectType
 }
 
+const getImageUrl = (project: ProjectType, theme: string = 'dark'): string => {
+  const portfolioSite = project.id === 6
+  return `/images/projects/${portfolioSite && theme === 'light' ? project.images[3] : project.images[0]}`
+}
+
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const [showModal, setShowModal] = useState(false)
+  const { theme } = useTheme()
 
   const reverseLayout = project.id % 2 === 0
+  const imageUrl = useMemo(() => getImageUrl(project, theme), [project, theme])
 
   return (
     <article className="font-medium dark:font-normal">
@@ -23,14 +32,15 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       >
         <figure
           onClick={() => setShowModal(true)}
-          className="group relative w-[300px] cursor-pointer overflow-hidden xs:w-[380px] md:w-[600px] xl:h-[290px] xl:max-w-[47%]"
+          className={`${reverseLayout ? 'xl:rounded-r-lg xl:rounded-tl-none' : 'xl:rounded-l-lg xl:rounded-tr-none'} group relative w-[300px] cursor-pointer overflow-hidden rounded-t-lg  xs:w-[380px] md:w-[600px] xl:h-[290px] xl:max-w-[47%]`}
         >
           <Image
-            src={`/images/projects/${project.images[0]}`}
+            src={imageUrl || ''}
             alt={`Screenshot of the ${project.title} project`}
             width={624}
             height={362}
-            className=" object-cover object-top"
+            className="object-cover object-top"
+            priority
           />
 
           {/* BG overlay */}
@@ -42,8 +52,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </figure>
 
-        {/* <div className="flex cursor-default flex-col gap-3 rounded-xl bg-white p-4 dark:bg-black sm:w-[90%] sm:gap-6 md:w-[70%] md:p-8 lg:w-1/2 "> */}
-        <div className="flex h-auto w-[300px] cursor-default flex-col gap-3 bg-yellow-50 p-4 dark:bg-black xs:w-[380px] md:w-[600px] md:gap-6 xl:h-[290px] xl:max-w-[47%]">
+        <div
+          className={`${reverseLayout ? 'xl:rounded-l-lg xl:rounded-tr-none' : 'xl:rounded-r-lg xl:rounded-tl-none'} flex h-auto w-[300px] cursor-default flex-col gap-3 rounded-b-lg bg-yellow-50  p-4 dark:bg-black xs:w-[380px] md:h-[310px] md:w-[600px] md:gap-6 xl:h-[290px] xl:max-w-[47%]`}
+        >
           <header>
             <h3 className="text-center text-xl font-semibold sm:pt-2 md:text-2xl">
               {project.title}
@@ -59,9 +70,11 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               ))}
             </div>
           </header>
-          <p className="line-clamp-3 whitespace-pre-line text-sm sm:px-4 md:px-6 md:text-base">
-            {project.description}
-          </p>
+          <div className="line-clamp-3 whitespace-pre-line text-sm sm:px-4 md:px-6 md:text-base">
+            {project.descriptions.map((description, index) => (
+              <p key={index}>{description}</p>
+            ))}
+          </div>
           <footer className="flex flex-col items-center justify-center gap-4 xs:flex-row">
             {project.sourceCode && (
               <div className="flex items-center gap-2">

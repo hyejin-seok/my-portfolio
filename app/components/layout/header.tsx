@@ -64,7 +64,7 @@ export const Header = () => {
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={-30}
+                offset={5}
                 duration={700}
                 activeClass="active-link"
                 onClick={() => setIsMenuOpen(false)}

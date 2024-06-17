@@ -1,11 +1,19 @@
 'use client'
 
-import { ProjectType } from '@/app/data'
-import { SiGithub } from 'react-icons/si'
-import { FiExternalLink, FiX, FiLayers, FiFileText } from 'react-icons/fi'
-import { PageDisplay } from './PageDisplay'
-import { AppGallery } from './AppGallery'
 import { useEffect } from 'react'
+import { useTheme } from 'next-themes'
+import {
+  FiExternalLink,
+  FiX,
+  FiLayers,
+  FiFileText,
+  FiStar,
+  FiCheck
+} from 'react-icons/fi'
+import { SiGithub } from 'react-icons/si'
+import { AppGallery } from './AppGallery'
+import { PageDisplay } from './PageDisplay'
+import { ProjectType } from '@/app/data'
 
 type ProjectModalProps = {
   project: ProjectType
@@ -18,6 +26,7 @@ export const ProjectModal = ({
   showModal,
   setShowModal
 }: ProjectModalProps) => {
+  const { theme } = useTheme()
   const isPageSite = project.type === 'page'
 
   const handleOverlayClick = (
@@ -40,6 +49,11 @@ export const ProjectModal = ({
     }
   }, [showModal])
 
+  const getImageUrl = () => {
+    const portfolioSite = project.id === 6
+    return `/images/projects/${portfolioSite && theme === 'light' ? project.images[2] : project.images[1]}`
+  }
+
   return (
     <div
       className="fixed inset-0 z-30 flex items-center justify-center"
@@ -50,7 +64,7 @@ export const ProjectModal = ({
       {/* BG overlay */}
       <div
         onClick={handleOverlayClick}
-        className="otransition-opacity fixed inset-0 bg-slate-500 opacity-80"
+        className="fixed inset-0 bg-slate-500 opacity-80 transition-opacity"
       ></div>
       {/* Modal content */}
       <div
@@ -69,7 +83,7 @@ export const ProjectModal = ({
           <figure>
             {isPageSite ? (
               <PageDisplay
-                imageUrl={`/images/projects/${project.images[1]}`}
+                imageUrl={getImageUrl() || ''}
                 altText={`Screenshot of the ${project.title} project`}
               />
             ) : (
@@ -82,10 +96,8 @@ export const ProjectModal = ({
               <h3 className="text-center text-xl font-semibold sm:pt-4 md:text-2xl lg:pt-6">
                 {project.title}
               </h3>
-              <h4 className="flex gap-2 pt-3 text-lg font-semibold text-yellow-200 md:pt-6 md:text-xl">
-                {/* 아이콘 삭제시 위의 flex와 gap-2 2가지 삭제필요 */}
-                <FiLayers className="text-xl  md:text-2xl" />
-                Tech Stack:
+              <h4 className="flex items-center gap-1 pt-3 text-lg font-semibold text-yellow-200 md:gap-2 md:pt-6 md:text-xl">
+                <FiLayers className="text-xl  md:text-2xl" /> Tech Stack:
               </h4>
 
               <div className="flex flex-wrap gap-3 pt-2 text-xs md:text-sm">
@@ -100,19 +112,36 @@ export const ProjectModal = ({
               </div>
             </header>
             <div>
-              <h4 className="flex gap-2 text-lg font-semibold text-yellow-200 md:text-xl">
-                {/* 아이콘 삭제시 위의 flex, gap-2 2가지 삭제필요 */}
+              <h4 className="flex items-center gap-1 text-lg font-semibold text-yellow-200 md:gap-2 md:text-xl">
                 <FiFileText className="text-xl  md:text-2xl" />
                 Description:
               </h4>
-              <p className="whitespace-pre-line pt-1 text-sm md:text-base">
-                {project.description}
-              </p>
+              <div className="flex flex-col gap-2 whitespace-pre-line pt-1 md:gap-3">
+                {project.descriptions.map((description, index) => (
+                  <p className="flex text-sm md:text-base" key={index}>
+                    {description}
+                  </p>
+                ))}
+              </div>
             </div>
-            <footer className="flex flex-col gap-4  ">
+            <div>
+              <h4 className="flex items-center gap-1 text-lg font-semibold text-yellow-200 md:gap-2 md:text-xl">
+                <FiStar className="text-xl  md:text-2xl" />
+                Key Features:
+              </h4>
+              <div className="flex flex-col gap-1 pt-1">
+                {project.features.map((feature) => (
+                  <div className="flex text-sm md:text-base" key={feature}>
+                    <FiCheck className="mr-1 mt-1 h-3 w-3 flex-shrink-0 md:h-4 md:w-4" />
+                    {feature}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <footer className="flex flex-col gap-4 md:gap-8  ">
               {project.sourceCode && (
                 <div>
-                  <h4 className="flex gap-2 pb-1 text-lg font-semibold text-yellow-200 md:text-xl ">
+                  <h4 className="flex items-center gap-1 pb-1 text-lg font-semibold text-yellow-200 md:gap-2 md:text-xl ">
                     <SiGithub className="text-xl md:text-2xl" />
                     Source Code:
                   </h4>
@@ -128,8 +157,8 @@ export const ProjectModal = ({
               )}
               {project.liveDemo && (
                 <div>
-                  <h4 className="flex gap-2 pb-1 text-lg font-semibold text-yellow-200 md:text-xl">
-                    <FiExternalLink className="text-2xl  md:text-3xl" />
+                  <h4 className="flex items-center gap-1 pb-1 text-lg font-semibold text-yellow-200  md:gap-2 md:text-xl">
+                    <FiExternalLink className="text-xl  md:text-2xl" />
                     Live Demo:
                   </h4>
                   <a

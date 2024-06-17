@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react'
 import { FreeMode, Navigation, Thumbs, Pagination } from 'swiper/modules'
 import { useState } from 'react'
 
@@ -8,11 +8,10 @@ type AppGalleryProps = {
 }
 
 export const AppGallery = ({ images, title }: AppGalleryProps) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null)
 
   return (
     <>
-      {/* <div className="relative h-96 w-full overflow-hidden"> */}
       <div className="relative w-full overflow-hidden">
         <Swiper
           loop={true}
@@ -20,7 +19,6 @@ export const AppGallery = ({ images, title }: AppGalleryProps) => {
           navigation={true}
           pagination={{
             clickable: true
-            // dynamicBullets: true
           }}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Pagination]}
@@ -28,7 +26,6 @@ export const AppGallery = ({ images, title }: AppGalleryProps) => {
         >
           {images.map((image) => (
             <SwiperSlide key={image}>
-              {/* <div className="mx-auto h-[395px] w-full "> */}
               <div className="mx-auto h-[170px] w-[350px] shadow-md md:h-[250px] md:w-[500px] lg:h-[350px] lg:w-[87%]">
                 <a href={`/images/projects/${image}`} target="_blank">
                   <img
@@ -47,7 +44,7 @@ export const AppGallery = ({ images, title }: AppGalleryProps) => {
 
       <div className="mx-auto w-[95%] overflow-hidden lg:mt-2 lg:h-20">
         <Swiper
-          onSwiper={setThumbsSwiper}
+          onSwiper={(swiper) => setThumbsSwiper(swiper as SwiperClass)}
           loop={true}
           spaceBetween={10}
           slidesPerView={4}

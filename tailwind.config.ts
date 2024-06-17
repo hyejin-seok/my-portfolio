@@ -37,11 +37,11 @@ const config: Config = {
           'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
         'hero-img-dark':
           'rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset',
-        'scroll-to-top':
+        'about-me':
           '0px 0px 5px #8b7355, 0px 0px 5px #8b7355, 0px 0px 5px #8b7355, 0px 0px 10px #8b7355'
       },
       maxWidth: {
-        container: '80rem'
+        container: '75rem'
       },
       screens: {
         xs: '420px'
@@ -51,7 +51,7 @@ const config: Config = {
         'bounce-slow': 'bounce 3s linear infinite',
         'scroll-down': 'scroll-down 2s infinite',
         'scroll-top': 'scroll-top 2s infinite',
-        'scroll-whole': 'scroll-whole 15s linear infinite'
+        'scroll-whole': 'scroll-whole 20s linear infinite'
       },
       keyframes: {
         floating: {

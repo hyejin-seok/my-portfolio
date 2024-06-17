@@ -15,17 +15,17 @@ export const About = () => {
     >
       <div className="mx-auto max-w-container">
         <SectionTitle title="About Hyejin" />
-        <div className="mt-12 flex flex-col items-center gap-10 md:justify-center lg:mt-24 lg:flex-row">
+        <div className="mt-12 flex flex-col items-center gap-10 md:justify-center lg:mt-20 lg:flex-row">
           <AnimationWrapper
             variants={slideInFromLeftVar}
             className="w-[60%] lg:w-[45%]"
           >
             <Image
-              src="/images/about-me.jpeg"
+              src="/images/about-me.jpg"
               alt="my picture"
               width="400"
-              height="400"
-              className="mx-auto h-auto rounded-xl ring-4 ring-yellow-200"
+              height="530"
+              className="mx-auto h-auto rounded-xl shadow-about-me"
             />
           </AnimationWrapper>
 

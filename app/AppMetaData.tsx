@@ -3,10 +3,10 @@ import type { Metadata } from 'next'
 const author = 'Hyejin Seok'
 const description =
   'Single-page Portfolio website of Hyejin Seok, dedicated full stack developer'
-const url = '' // 수정하기
+const url = 'https://hyejinseok.com'
 
 export const AppMetadata: Metadata = {
-  // metadataBase: new URL(''), 수정하기
+  metadataBase: new URL('https://hyejinseok.com'),
   title: {
     default: `Portfolio | ${author}`,
     template: `%s | ${author}`
@@ -24,7 +24,7 @@ export const AppMetadata: Metadata = {
   ],
   creator: author,
   authors: [{ name: author, url: url }],
-  // colorScheme: 'dark',
+  colorScheme: 'dark',
   openGraph: {
     title: `${author} | Portfolio`,
     description: description,
@@ -32,16 +32,10 @@ export const AppMetadata: Metadata = {
     siteName: `${author} | Portfolio`,
     images: [
       {
-        url: '', // 수정
-        width: 800,
-        height: 600,
-        alt: 'My personal portfolio website'
-      },
-      {
-        url: '', // 수정
-        width: 1800,
-        height: 1600,
-        alt: 'My personal portfolio website'
+        url: 'portfolio-4.webp',
+        width: 1600,
+        height: 835,
+        alt: 'My Portfolio Website, Hyejin Seok'
       }
     ],
     locale: 'en-US',
