@@ -37,9 +37,9 @@ export const ChangeDescriptions = () => {
           transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
         }}
       >
-        I{' '}
+        I
         <span
-          className=" ease-in-expo absolute flex flex-col transition-all duration-500"
+          className="ease-in-expo absolute flex flex-col transition-all duration-500"
           style={{
             top:
               count === 0
@@ -51,7 +51,7 @@ export const ChangeDescriptions = () => {
                     : count === 3
                       ? '-300%'
                       : '0',
-            left: '13px'
+            left: '10px'
           }}
         >
           {text.map((element, index) => (

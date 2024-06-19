@@ -2,7 +2,7 @@
 import { SectionTitle } from '../Titles'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 import { AnimationWrapper, slideInFromLeftVar } from '../Animations'
-import { EmailForm } from '../Emails'
+import { EmailForm } from '../emails'
 
 export const Contact = () => {
   return (
