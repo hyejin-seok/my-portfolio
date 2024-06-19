@@ -17,14 +17,12 @@ export const AppMetadata: Metadata = {
   },
   keywords: [
     'Hyejin Seok',
-    'Hyejin Seok - full stack web developer',
-    'Frontend developer',
-    'Portfolio website',
+    'Hyejin Seok - Full Stack Web Developer',
+    'Frontend Developer',
     'Full stack Developer'
   ],
   creator: author,
   authors: [{ name: author, url: url }],
-  colorScheme: 'dark',
   openGraph: {
     title: `${author} | Portfolio`,
     description: description,

@@ -25,6 +25,7 @@ export const About = () => {
               alt="my picture"
               width="400"
               height="530"
+              priority
               className="mx-auto h-auto rounded-xl shadow-about-me"
             />
           </AnimationWrapper>

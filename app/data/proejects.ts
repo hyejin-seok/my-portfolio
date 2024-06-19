@@ -120,7 +120,7 @@ export const projects: ProjectType[] = [
     ],
     features: [
       'Navigation: Users can navigate through different sections of the website using the main menu or the navigation menu, which includes a hamburger icon for easy access on mobile devices.',
-      'Hamburger Nav: Initially, 🍔 was created using only SASS, with CSS used to display and hide it.',
+      'Hamburger Nav: Initially, 🍔 was created using only HTML, SASS, with CSS used to display and hide it.',
       'Donate Modal: Users can donate to the organization by selecting different donation frequencies (monthly, bimonthly, quarterly, or one-time) via a modal window.',
       'Subscription Form: Users can subscribe to join projects of the organization and receive updates from the organization by providing their email addresses via a subscription form.',
       'Responsive Design: The application is designed to be accessible and functional across various devices and screen sizes. '
@@ -168,7 +168,7 @@ export const projects: ProjectType[] = [
     ],
     features: [
       'Responsive Navbar',
-      'CSS-only Hamburger Menu',
+      'HTML/CSS-only Hamburger Menu',
       'Video in Hero Section',
       'Rotating Testimonials with Keyframe Animations',
       'Styling with Pseudo-elements and Pseudo-classes',
@@ -188,10 +188,11 @@ export const projects: ProjectType[] = [
       'I chose the topic of climate change because it is a significant issue today, and I wanted to raise awareness about its impact.'
     ],
     features: [
-      'Dynamic title with Keyframe Animations',
+      'Fully Responsive Design',
+      'Dynamic Title with Keyframe Animations',
       'Enhanced Typography with Text Shadows',
-      'Creative Text Styling Using Pseudo-elements',
-      'Fully Responsive Design'
+      'Distinct Text Styling with Pseudo-elements',
+      'Unique Box Styling Using Clip-path CSS'
     ],
     techStacks: ['HTML', 'CSS'],
     sourceCode: 'https://github.com/hyejin-seok/climate-infographic',
