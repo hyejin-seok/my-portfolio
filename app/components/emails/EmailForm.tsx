@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useFormState } from 'react-dom'
 import { toast } from 'react-hot-toast'
 import { FiSend } from 'react-icons/fi'
@@ -12,9 +12,19 @@ export const EmailForm = () => {
     success: false
   })
 
+  const nameRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null)
+  const subjectRef = useRef<HTMLInputElement>(null)
+  const messageRef = useRef<HTMLTextAreaElement>(null)
+
   useEffect(() => {
     if (sendEmailState.success) {
       toast.success('Your messagewas was sent successfully!')
+      // Clear the form inputs
+      if (nameRef.current) nameRef.current.value = ''
+      if (emailRef.current) emailRef.current.value = ''
+      if (subjectRef.current) subjectRef.current.value = ''
+      if (messageRef.current) messageRef.current.value = ''
     }
     if (sendEmailState.error) {
       toast.error('Error! Your meesage was failed to send..')
@@ -38,6 +48,7 @@ export const EmailForm = () => {
             <input
               name="name"
               type="name"
+              ref={nameRef}
               id="name"
               required
               placeholder="John Doe"
@@ -51,6 +62,7 @@ export const EmailForm = () => {
             <input
               name="email"
               type="email"
+              ref={emailRef}
               id="email"
               required
               maxLength={100}
@@ -66,6 +78,7 @@ export const EmailForm = () => {
           <input
             name="subject"
             type="subject"
+            ref={subjectRef}
             id="subject"
             required
             placeholder="Job Opportunity"
@@ -79,6 +92,7 @@ export const EmailForm = () => {
           <textarea
             name="message"
             id="message"
+            ref={messageRef}
             required
             placeholder="Hi, we would like to work with you! &nbsp;🎉"
             className="min-h-40 rounded bg-grey p-1 text-black placeholder:font-normal dark:bg-white"

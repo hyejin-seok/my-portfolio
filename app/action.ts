@@ -1,6 +1,7 @@
 'use server'
 import { Resend } from 'resend'
 import { EmailTemplate } from '../app/components/emails'
+import { render } from '@react-email/render'
 
 interface State {
   error: string | null
@@ -20,12 +21,14 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
       from: `Hyejin <${resendEmail}>`,
       to: email,
       subject: 'Form Submission from my portfolio',
-      react: EmailTemplate({
-        name,
-        email,
-        subject,
-        message
-      })
+      html: render(
+        EmailTemplate({
+          name,
+          email,
+          subject,
+          message
+        })
+      )
     })
     return {
       error: null,
