@@ -17,28 +17,41 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
     const resend = new Resend(process.env.RESEND_API_KEY)
     const resendEmail = process.env.RESEND_EMAIL
 
-    await resend.emails.send({
-      from: `Hyejin <${resendEmail}>`,
-      to: email,
-      subject: 'Form Submission from my portfolio',
-      html: render(
-        EmailTemplate({
-          name,
-          email,
-          subject,
-          message
-        })
-      )
+    if (!resendEmail) {
+      throw new Error('RESEND_EMAIL environment variable is not defined')
+    }
+
+    console.log('Resend Email:', resendEmail)
+
+    const emailContent = render(
+      EmailTemplate({
+        name,
+        email,
+        subject,
+        message
+      })
+    )
+
+    console.log('Email content:', emailContent)
+
+    const response = await resend.emails.send({
+      from: `Portfolio Contact <${resendEmail}>`,
+      to: resendEmail,
+      subject: `New message from ${name} - ${subject}`,
+      html: emailContent
     })
+
+    console.log('Resend response:', response)
+
     return {
-      error: null,
-      success: true
+      success: true,
+      error: null
     }
   } catch (error) {
-    console.log(error)
+    console.log('Error sending email:', error)
     return {
-      error: (error as Error).message,
-      success: false
+      success: false,
+      error: (error as Error).message
     }
   }
 }
