@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useFormState } from 'react-dom'
 import { toast } from 'react-hot-toast'
 import { FiSend } from 'react-icons/fi'
@@ -12,6 +12,8 @@ export const EmailForm = () => {
     success: false
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
   const subjectRef = useRef<HTMLInputElement>(null)
@@ -19,17 +21,34 @@ export const EmailForm = () => {
 
   useEffect(() => {
     if (sendEmailState.success) {
-      toast.success('Your messagewas was sent successfully!')
-      // Clear the form inputs
-      if (nameRef.current) nameRef.current.value = ''
-      if (emailRef.current) emailRef.current.value = ''
-      if (subjectRef.current) subjectRef.current.value = ''
-      if (messageRef.current) messageRef.current.value = ''
+      toast.success('Thank you! Your message was sent successfully!')
+      clearFormInputs()
     }
     if (sendEmailState.error) {
-      toast.error('Error! Your meesage was failed to send..')
+      toast.error('Error! Your meesage failed to send.')
     }
+    setIsSubmitting(false)
   }, [sendEmailState])
+
+  const clearFormInputs = () => {
+    nameRef.current && (nameRef.current.value = '')
+    emailRef.current && (emailRef.current.value = '')
+    subjectRef.current && (subjectRef.current.value = '')
+    messageRef.current && (messageRef.current.value = '')
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const formData = new FormData()
+    formData.append('name', nameRef.current?.value || '')
+    formData.append('email', emailRef.current?.value || '')
+    formData.append('subject', subjectRef.current?.value || '')
+    formData.append('message', messageRef.current?.value || '')
+
+    sendEmailAction(formData)
+  }
 
   return (
     <AnimationWrapper
@@ -38,7 +57,7 @@ export const EmailForm = () => {
     >
       <form
         className="flex flex-col gap-4 text-sm xs:text-base md:text-lg"
-        action={sendEmailAction}
+        onSubmit={handleSubmit}
       >
         <div className="flex flex-col justify-between md:flex-row">
           <div className="mb-4 flex flex-col md:mb-0 md:w-[44%]">
@@ -52,6 +71,7 @@ export const EmailForm = () => {
               id="name"
               required
               placeholder="John Doe"
+              disabled={isSubmitting}
               className="h-10 rounded bg-grey  pl-2 text-black placeholder:font-normal"
             />
           </div>
@@ -67,6 +87,7 @@ export const EmailForm = () => {
               required
               maxLength={100}
               placeholder="example@example.com"
+              disabled={isSubmitting}
               className="h-10 rounded bg-grey pl-2 text-black placeholder:font-normal"
             />
           </div>
@@ -82,6 +103,7 @@ export const EmailForm = () => {
             id="subject"
             required
             placeholder="Job Opportunity"
+            disabled={isSubmitting}
             className="h-10 rounded bg-grey pl-2 text-black placeholder:font-normal dark:bg-white"
           />
         </div>
@@ -95,11 +117,13 @@ export const EmailForm = () => {
             ref={messageRef}
             required
             placeholder="Hi, we would like to work with you! &nbsp;🎉"
+            disabled={isSubmitting}
             className="min-h-40 rounded bg-grey p-1 text-black placeholder:font-normal dark:bg-white"
           />
         </div>
         <button
           type="submit"
+          disabled={isSubmitting}
           className="mx-auto mt-5 items-center rounded-lg border-4 border-double border-yellow-400 p-2 font-medium transition-all duration-500 hover:scale-105 hover:bg-yellow-400 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black"
         >
           Send Message

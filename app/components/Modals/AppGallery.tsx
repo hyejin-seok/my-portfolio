@@ -26,7 +26,7 @@ export const AppGallery = ({ images, title }: AppGalleryProps) => {
         >
           {images.map((image) => (
             <SwiperSlide key={image}>
-              <div className="mx-auto h-[170px] w-[350px] shadow-md md:h-[250px] md:w-[500px] lg:h-[350px] lg:w-[87%]">
+              <div className="mx-auto h-[170px] w-[310px] shadow-md md:h-[250px] md:w-[500px] lg:h-[350px] lg:w-[87%]">
                 <a href={`/images/projects/${image}`} target="_blank">
                   <img
                     src={`/images/projects/${image}`}

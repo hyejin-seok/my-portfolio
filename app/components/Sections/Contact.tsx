@@ -15,7 +15,7 @@ export const Contact = () => {
         <AnimationWrapper variants={slideInFromLeftVar}>
           <div className="mb-7">
             <div className="flex flex-col gap-4 px-4 text-center text-lg font-medium md:text-xl">
-              <p>I&apos;m currently open to new opportunities.</p>
+              <p>I&apos;m currently open to new&nbsp;opportunities.</p>
               <p>
                 Whether you have a question or just want to say hi,
                 <br />

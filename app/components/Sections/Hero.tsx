@@ -15,7 +15,7 @@ export const Hero = () => {
       <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[580px] lg:flex-row ">
         <div className="order-last mt-5 md:mt-0 lg:order-first">
           <h2 className="mb-8 w-fit rounded-xl bg-yellow-200 px-2 py-2 text-center text-base font-bold tracking-wide dark:bg-brown dark:font-semibold md:px-4 md:text-lg">
-            Welcome To My Portfolio!
+            Welcome To My&nbsp;Portfolio!
           </h2>
           <span className="block text-xl font-bold tracking-wide dark:font-semibold md:text-2xl">
             Hi, I&apos;m
@@ -24,11 +24,9 @@ export const Hero = () => {
             Hyejin Seok
           </h1>
           <p className="mt-6 text-xl font-bold text-yellow-400 dark:font-semibold sm:text-2xl md:text-3xl">
-            A Dedicated Full-Stack Web Developer
+            A Dedicated Full-Stack Web&nbsp;Developer
           </p>
-
           <ChangeDescriptions />
-
           <div className="mt-8 w-fit cursor-pointer rounded-lg border-4 border-double border-yellow-400 px-3 py-2 text-center text-lg font-semibold tracking-wide transition-all duration-500 hover:scale-105 hover:bg-yellow-400 hover:text-white dark:border-yellow-300 dark:hover:bg-yellow-100 dark:hover:text-black sm:text-xl md:text-2xl lg:mt-14">
             <Link
               to="contact"
