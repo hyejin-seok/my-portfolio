@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
 import { useInView } from 'framer-motion'
 
 export const ChangeDescriptions = () => {
@@ -7,27 +7,53 @@ export const ChangeDescriptions = () => {
   const isInView = useInView(ref, { once: true })
 
   let [count, setCount] = useState(0)
-  const [text] = useState([
-    'Design/Code full-stack apps',
-    'Craft visually engaging user interfaces',
-    'Create intuitive & user-friendly designs.',
-    'Develop interactive & dynamic websites.'
-  ])
+
+  const textDefault = useMemo(
+    () => [
+      'Design/Code full-stack apps',
+      'Craft visually engaging user interfaces',
+      'Create intuitive & user-friendly designs.',
+      'Develop interactive & dynamic websites.'
+    ],
+    []
+  )
+
+  const textSmallScreen = useMemo(
+    () => [
+      'Design/Code full-stack apps',
+      'Craft visually engaging UIs',
+      'Create user-friendly designs',
+      'Build interactive & dynamic sites'
+    ],
+    []
+  )
+
+  const [text, setText] = useState(textDefault)
 
   useEffect(() => {
-    let interval = setInterval(() => {
-      setCount(count + 1)
-
-      if (count === 3) {
-        setCount(0)
+    const handleResize = () => {
+      if (window.innerWidth <= 430) {
+        setText(textSmallScreen)
+      } else {
+        setText(textDefault)
       }
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [textDefault, textSmallScreen])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => (prevCount + 1) % text.length)
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [count])
+  }, [text.length])
 
   return (
-    <div className="relative mt-3 flex flex-col overflow-hidden font-semibold tracking-wide dark:font-normal xs:text-lg sm:text-xl md:text-2xl lg:mt-6">
+    <div className="relative mt-3 flex flex-col overflow-hidden text-lg font-semibold tracking-wide dark:font-normal sm:text-xl md:text-2xl lg:mt-6">
       <p
         ref={ref}
         className="transform-none text-start opacity-100"
@@ -39,7 +65,7 @@ export const ChangeDescriptions = () => {
       >
         I
         <span
-          className="ease-in-expo absolute flex flex-col transition-all duration-500"
+          className="ease-in-expo absolute left-[11px] flex flex-col transition-all duration-500 xs:left-[12px] md:left-[13px]"
           style={{
             top:
               count === 0
@@ -50,8 +76,8 @@ export const ChangeDescriptions = () => {
                     ? '-200%'
                     : count === 3
                       ? '-300%'
-                      : '0',
-            left: '10px'
+                      : '0'
+            // left: '13px'
           }}
         >
           {text.map((element, index) => (

@@ -13,7 +13,7 @@ export const Hero = () => {
       id="home"
     >
       <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[580px] lg:flex-row ">
-        <div className="order-last mt-5 md:mt-0 lg:order-first ">
+        <div className="order-last mt-5 md:mt-0 lg:order-first">
           <h2 className="mb-8 w-fit rounded-xl bg-yellow-200 px-2 py-2 text-center text-base font-bold tracking-wide dark:bg-brown dark:font-semibold md:px-4 md:text-lg">
             Welcome To My Portfolio!
           </h2>

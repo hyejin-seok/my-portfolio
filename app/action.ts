@@ -35,7 +35,7 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
     console.log('Email content:', emailContent)
 
     const response = await resend.emails.send({
-      from: `Portfolio Contact <${resendEmail}>`,
+      from: 'Portfolio Contact <contact@hyejinseok.com>',
       to: resendEmail,
       subject: `New message from ${name} - ${subject}`,
       html: emailContent
