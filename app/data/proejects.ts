@@ -71,7 +71,8 @@ export const projects: ProjectType[] = [
     type: 'app',
     descriptions: [
       'This application allows users to create, read, update, and delete (CRUD) short post-it style notes and image posts. Users can also bookmark their favorite posts and images.',
-      'The app is built with Next.js and TypeScript, styled with Tailwind CSS, and uses Cloudinary for image storage. Next Auth is used to ensure secure user authentication, while React Dropzone provides a user-friendly drag-and-drop interface for image uploads.'
+      'The app is built with Next.js and TypeScript, styled with Tailwind CSS, and uses Cloudinary for image storage. Next Auth is used to ensure secure user authentication, while React Dropzone provides a user-friendly drag-and-drop interface for image uploads.',
+      '< Test Account > \n Username: testuser \n Password: password'
     ],
     features: [
       'Post-It Style Notes Blog: Users can create, read, update, delete, and bookmark post-it style notes.',
@@ -82,7 +83,7 @@ export const projects: ProjectType[] = [
     ],
     techStacks: ['Next.js', 'Prisma', 'TypeScript', 'Next Auth', 'Cloudinary'],
     sourceCode: 'https://github.com/hyejin-seok/post-it-blog-app',
-    liveDemo: null
+    liveDemo: 'https://blog-ez0gmcfru-hyejins-projects-b738db02.vercel.app'
   },
   {
     id: 4,
@@ -107,7 +108,7 @@ export const projects: ProjectType[] = [
     ],
     techStacks: ['React', 'Vite', 'React Router', 'Bootstrap'],
     sourceCode: 'https://github.com/hyejin-seok/quotes-collection',
-    liveDemo: null
+    liveDemo: 'https://quotes-collection.vercel.app/'
   },
   {
     id: 5,
@@ -127,7 +128,7 @@ export const projects: ProjectType[] = [
     ],
     techStacks: ['JavaScript', 'Sass', 'HTML', 'Webpack'],
     sourceCode: 'https://github.com/hyejin-seok/world-heart-NGO-page',
-    liveDemo: null
+    liveDemo: 'https://hyejin-seok.github.io/world-heart-NGO-page/'
   },
   {
     id: 6,
@@ -176,7 +177,7 @@ export const projects: ProjectType[] = [
     ],
     techStacks: ['HTML', 'CSS'],
     sourceCode: 'https://github.com/hyejin-seok/Jewellery-Page',
-    liveDemo: null
+    liveDemo: 'https://hyejin-seok.github.io/Jewellery-Page/'
   },
   {
     id: 8,
@@ -196,6 +197,6 @@ export const projects: ProjectType[] = [
     ],
     techStacks: ['HTML', 'CSS'],
     sourceCode: 'https://github.com/hyejin-seok/climate-infographic',
-    liveDemo: null
+    liveDemo: 'https://hyejin-seok.github.io/climate-infographic/'
   }
 ]

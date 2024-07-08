@@ -113,16 +113,16 @@ export const SkillIcons = ({ type }: SkillCategory) => {
       name: 'NestJS'
     },
     {
+      icon: <SiPostgresql size="100%" />,
+      name: 'PostgreSQL'
+    },
+    {
       icon: <SiMongodb size="100%" />,
       name: 'MongoDB'
     },
     {
       icon: <SiMongoose size="100%" />,
       name: 'Mongoose'
-    },
-    {
-      icon: <SiPostgresql size="100%" />,
-      name: 'PostgreSQL'
     },
     {
       icon: <SiPrisma size="100%" />,
