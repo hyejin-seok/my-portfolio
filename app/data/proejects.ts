@@ -83,7 +83,7 @@ export const projects: ProjectType[] = [
     ],
     techStacks: ['Next.js', 'Prisma', 'TypeScript', 'Next Auth', 'Cloudinary'],
     sourceCode: 'https://github.com/hyejin-seok/post-it-blog-app',
-    liveDemo: 'https://blog-ez0gmcfru-hyejins-projects-b738db02.vercel.app'
+    liveDemo: 'https://blog-app-ecru-beta.vercel.app'
   },
   {
     id: 4,

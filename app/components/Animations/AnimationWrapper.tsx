@@ -18,7 +18,7 @@ export const AnimationWrapper = ({
       initial="hidden"
       whileInView="visible"
       variants={variants}
-      viewport={{ once: true, amount: 0.3 }} //only plays once when 30% of the element is in view.
+      viewport={{ once: true, amount: 0.25 }} //only plays once when 25% of the element is in view.
     >
       {children}
     </motion.div>
