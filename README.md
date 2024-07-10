@@ -16,7 +16,9 @@ This site is a reflection of my personal style and technical expertise, featurin
 
 <br>
 
-![portfolio-3](https://github.com/hyejin-seok/my-portfolio/assets/132785671/739034ad-3b30-4f52-bad2-3ec36c821c30)
+![portfolio-3](https://github.com/hyejin-seok/my-portfolio/assets/132785671/32adab14-bcc5-41a8-9c42-adc8e70fd82e)
+
+
 
 ## Key Features
 
