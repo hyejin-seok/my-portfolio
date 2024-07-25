@@ -71,17 +71,24 @@ export const projects: ProjectType[] = [
     type: 'app',
     descriptions: [
       'This application allows users to create, read, update, and delete (CRUD) short post-it style notes and image posts. Users can also bookmark their favorite posts and images.',
-      'The app is built with Next.js and TypeScript, styled with Tailwind CSS, and uses Cloudinary for image storage. Next Auth is used to ensure secure user authentication, while React Dropzone provides a user-friendly drag-and-drop interface for image uploads.',
+      'The app is built with Next.js and TypeScript, styled with Tailwind CSS, and uses Cloudinary for image storage. Next Auth is used to ensure secure user authentication, while React Dropzone provides a user-friendly drag-and-drop interface for image uploads. PostgreSQL is used as the primary database for efficient data management.',
       '< Test Account > \n Username: testuser \n Password: password'
     ],
     features: [
       'Post-It Style Notes Blog: Users can create, read, update, delete, and bookmark post-it style notes.',
       'Image Blog: Users can upload images, manage them, and bookmark their favorite images. Images can be uploaded via drag-and-drop or by selecting files.',
-      'Cloudinary Integration: Uploaded images are stored securely using Cloudinary cloud service.',
       'Authentication: Users can sign up, log in, and log out.',
+      'Database Management: PostgreSQL is used as the primary database, providing robust and efficient data management.',
+      'Cloudinary Integration: Uploaded images are stored securely using Cloudinary cloud service.',
       'Contact Page: Users can send messages directly to the blog team through a simple, user-friendly form.'
     ],
-    techStacks: ['Next.js', 'Prisma', 'TypeScript', 'Next Auth', 'Cloudinary'],
+    techStacks: [
+      'Next.js',
+      'PostgreSQL',
+      'TypeScript',
+      'Next Auth',
+      'Cloudinary'
+    ],
     sourceCode: 'https://github.com/hyejin-seok/post-it-blog-app',
     liveDemo: 'https://blog-app-ecru-beta.vercel.app'
   },
@@ -106,7 +113,7 @@ export const projects: ProjectType[] = [
       'Quotes Collections: Users can save their favorite quotes and manage their collection by adding, viewing, and deleting quotes.',
       'Tweet Quotes: Users can easily share their favorite quotes on Twitter with a single click of a button.'
     ],
-    techStacks: ['React', 'Vite', 'React Router', 'Bootstrap'],
+    techStacks: ['React', 'Vite', 'React Router', 'Bootstrap', 'API'],
     sourceCode: 'https://github.com/hyejin-seok/quotes-collection',
     liveDemo: 'https://quotes-collection.vercel.app/'
   },
@@ -175,7 +182,7 @@ export const projects: ProjectType[] = [
       'Styling with Pseudo-elements and Pseudo-classes',
       'Fully Responsive Design'
     ],
-    techStacks: ['HTML', 'CSS'],
+    techStacks: ['HTML', 'CSS', 'Keyframes'],
     sourceCode: 'https://github.com/hyejin-seok/Jewellery-Page',
     liveDemo: 'https://hyejin-seok.github.io/Jewellery-Page/'
   },

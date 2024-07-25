@@ -9,7 +9,7 @@ import { ScrollDown } from '../Buttons'
 export const Hero = () => {
   return (
     <section
-      className="mx-auto max-w-container px-4 pb-24 pt-4 md:pb-32 md:pt-20"
+      className="mx-auto max-w-container px-4 pb-24 pt-4 md:pb-3 md:pt-0"
       id="home"
     >
       <div className=" flex flex-col items-center justify-around gap-5 md:gap-8 lg:h-[580px] lg:flex-row ">

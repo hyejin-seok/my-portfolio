@@ -18,8 +18,6 @@ This site is a reflection of my personal style and technical expertise, featurin
 
 ![portfolio-3](https://github.com/hyejin-seok/my-portfolio/assets/132785671/32adab14-bcc5-41a8-9c42-adc8e70fd82e)
 
-
-
 ## Key Features
 
 - **Interactive Animations**: Utilize Framer Motion, Tailwind CSS to create fluid, eye-catching animations that make the UI lively and engaging.
